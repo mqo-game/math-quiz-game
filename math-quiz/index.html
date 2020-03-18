@@ -9,7 +9,7 @@
     <script src="main.js"></script>
 </head>
 
-<body>
+<body onload="index()">
     <div id="main">
         <form><img src="logo.png"></form>
         <form><label for="name">Enter Your Name </label> <br />
@@ -26,7 +26,7 @@
                 </select><br /><br /></form>
                 
         <button type="submit" value="Submit" onclick="submit()">Start Quiz</button>
-        <p id="info"> Game by <a href="www.github.com/MCJoe21">McJoe21</a> ----- Version 0.2-beta </p>
+        <p id="info"> Game by <a href="www.github.com/MCJoe21">McJoe21</a> ----- Version <span id="ver"></span> </p>
         <script src="" async defer></script>
 </body>
 
