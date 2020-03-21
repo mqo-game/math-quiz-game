@@ -50,7 +50,6 @@ function new_sum() {
     }
     
     /* generate sums */
-    $type = 2
     if ($type == 1) {
     $answer = $num_1 + $num_2
     $sum = "+"
