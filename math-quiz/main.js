@@ -14,7 +14,7 @@ function submit() {
   }
  }
 function index() {
-  document.getElementById("ver").innerHTML = "0.3-beta"}
+  document.getElementById("ver").innerHTML = "0.3.1-beta"}
 function main() {
     $q = 1; 
     document.getElementById("q").innerHTML = $q
@@ -50,10 +50,14 @@ function new_sum() {
     }
     
     /* generate sums */
+    $type = 2
     if ($type == 1) {
     $answer = $num_1 + $num_2
     $sum = "+"
     } else if ($type == 2) {
+      if ($num_2 > $num_1) {
+        new_sum()
+      }
      $answer = $num_1 - $num_2
      $sum = "-"
     } else if ($type == 3) {
