@@ -14,7 +14,7 @@ function submit() {
   }
  }
 function index() {
-  document.getElementById("ver").innerHTML = "0.3.1-beta"}
+  document.getElementById("ver").innerHTML = "0.3.2-beta"}
 function main() {
     $q = 1; 
     document.getElementById("q").innerHTML = $q
