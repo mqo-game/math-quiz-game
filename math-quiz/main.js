@@ -14,7 +14,7 @@ function submit() {
   }
  }
 function index() {
-  document.getElementById("ver").innerHTML = "0.3.2-beta"}
+  document.getElementById("ver").innerHTML = "0.3.3-beta"}
 function main() {
     $q = 1; 
     document.getElementById("q").innerHTML = $q
@@ -69,8 +69,8 @@ function new_sum() {
 }    
 function check() {
 /* check answer */
-    $a = document.getElementById("a").value;
-    if ($a == $answer) {
+    $a_edit = document.getElementById("a");
+    if ($a_edit.value == $answer) {
         $q = $q + 1;
         document.getElementById("q").innerHTML = $q;
         $a_edit.value = ""
