@@ -1,35 +1,35 @@
-function submit() {
+const id = 'mqo.'
+
+function start() {
     var name = document.getElementById("name").value;
     var diff = document.getElementById("diff").value;
-    var email = document.getElementById("email").value;
 
     if (name !== "" || email !== "") {
     base = diff * 9;
-    localStorage.setItem("name", name)
-    localStorage.setItem("base", base)
+    localStorage.setItem(id+"name", name)
+    localStorage.setItem(id+"base", base)
 
-    window.location.assign('main.html')
+    window.location.assign('game.html')
   } else {
       alert("Please enter your name.")
   }
  }
-function index() {
-  document.getElementById("ver").innerHTML = "0.3.3-beta"}
+  
 function main() {
+  var a = document.getElementById('a')
     $q = 1; 
     document.getElementById("q").innerHTML = $q
-    $name = localStorage.getItem("name")
-    $base = localStorage.getItem("base")
+    $name = localStorage.getItem(id+"name")
+    $base = localStorage.getItem(id+"base")
     if ($base !== 0) {
        new_sum();
-    } else {document.location.replace('index.html')}
+    } else {document.location.replace('menu.html')}
 }
 
 function type_num(num) {
-    $a_edit =  document.getElementById("a"); 
     if (num == 10) {
-        $a_edit.value = ""} else {
-    $a_edit.value += "" + num
+        a.value = ""} else {
+    a.value += "" + num
     }
 }
 
@@ -38,7 +38,7 @@ function new_sum() {
     $num_1 = Math.floor(Math.random() * $base + 1)
     $num_2 = Math.floor(Math.random() * $base + 1)
     
-    /* check differently */
+    /* check difficulty level */
     $diff = $base/9
     if ($diff == 1) {
       $type = 1
@@ -64,19 +64,17 @@ function new_sum() {
       $sum = "x"
     }
     
-    $str = $num_1 + " " + $sum + " " + $num_2 + " = ?"
-    document.getElementById("sum").innerHTML = $str
+    document.getElementById("sum").innerHTML = $num_1 + " " + $sum + " " + $num_2 + " = ?"
 }    
 function check() {
 /* check answer */
-    $a_edit = document.getElementById("a");
-    if ($a_edit.value == $answer) {
+    if (a.value == $answer) {
         $q = $q + 1;
         document.getElementById("q").innerHTML = $q;
-        $a_edit.value = ""
+        a.value = ""
         new_sum();
-    } else {
+    } else if (a.value != "") {
         alert("Incorrect answer.")
-        window.location.replace('index.html')
+        window.location.replace('menu.html')
         }   
     }
