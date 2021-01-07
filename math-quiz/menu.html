@@ -10,13 +10,12 @@
 <script src="main.js"></script>
 </head>
 
-<body onload="index()">
+<body onload="">
     <div id="main">
         <form><img src="logo.png"></form>
         <form><label for="name">Enter Your Name </label> <br />
             <input id="name" type="text" required> <br /></form>
-            <form><label for="name">Enter Your Email </label> <br />
-                <input id="email" type="email" required> <br /></form>
+            <br><br><br/>
         <form><label for="diff_level">Pick Difficulty Level</label><br />
             <select id="diff">
                     <option value="1">Difficulty: X-Easy (1-10)</option>
@@ -26,8 +25,7 @@
                     <option value="5">Difficulty: X-Hard (41-50)</option>
                 </select><br /><br /></form>
                 
-        <button type="submit" value="Submit" onclick="submit()">Start Quiz</button>
-        <p id="info"> Game by <a href="www.github.com/MCJoe21">McJoe21</a> ----- Version <span id="ver"></span> ----- <a href="about.html">About the Game</a> </p></div>
+        <button type="submit" value="Submit" onclick="start()">Start Quiz</button>
+        <p id="info"> Game by <a href="www.github.com/MCJoe21">McJoe21</a> ----- Version 0.3.4-beta ----- <a href="about.html">About the Game</a> </p></div>
 </body>
-
 </html>
