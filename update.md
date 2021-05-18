@@ -1,5 +1,1 @@
-**Update news 0.3.4!**
-
-- Fixed wrong answer when empty input
-- Scrapped email input on menu (didn't do anything)
-- Other small changes in code
+I have been working on the new end screen for #MQO and with useful information (e.g. your name and and score) and can be printed looking good and can be used as a certificate reward! There is also a new score target system inplace as a real challenge for the player or just use endless mode to get the biggest score!
