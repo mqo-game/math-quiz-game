@@ -1,0 +1,54 @@
+input,
+select {
+    width: 80%;
+    padding: 5px;
+    font-size: 20px;
+    border-width: 5px;
+    border-color: rgb(97, 93, 93);
+    color: #000000;
+    border-style: solid;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(66, 66, 66, .75);
+    text-align: center;
+}
+
+div#main {
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    border: 3px solid green;
+    padding: 25px;
+    font-family: Sans-Serif;
+    font-size: 25px;
+    color: #fff;
+    background-color: #034497;
+}
+
+button {
+    width: 80%;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Sans-Serif;
+    background-color: #e67316;
+    border-radius: 6px;
+}
+
+label#title {
+    font-weight: bold;
+}
+
+#sum {
+    font-size: 40px;
+}
+#title {
+    font-size: 40px;
+}
+p#info {
+    font-size: 22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: brown;
+    color: chartreuse;
+    height: 22px;
+}
