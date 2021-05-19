@@ -1,7 +1,7 @@
 ===============================================
-# Math Quiz Online Archives All Versions #
-# All source code is from [GitHub](https://github.com/McJoe21/html5-math-quiz) 2021 #
-# Download this zip from [mcjoe21.com](https://mcjoe21.com/files/MathQuiz_AllVers.zip) # 
+### Math Quiz Online Archives All Versions #
+### All source code is from [GitHub](https://github.com/McJoe21/html5-math-quiz) 2021 #
+### Download this zip from [mcjoe21.com](https://mcjoe21.com/files/MathQuiz_AllVers.zip) # 
 ===============================================
 
 **I made this archive to preserve the history of the game updates and to keep safe the history of versions (including bug fixes and mean), so feel free to explore and check out what the game used to like at the start!**
