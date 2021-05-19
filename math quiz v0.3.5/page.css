@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
+
+input,
+select {
+    width: 80%;
+    max-zoom: 800px;
+    padding: 5px;
+    font-size: 22px;
+    font-family: 'Ranchers', cursive;
+    border-width: 5px;
+    border-color: rgb(97, 93, 93);
+    color: #000000;
+    border-style: solid;
+    border-radius: 8px;
+    font-family: ;
+    box-shadow: 0px 0px 5px rgba(66, 66, 66, .75);
+    text-align: center;
+}
+
+div#main {
+    text-align: center;
+    margin: auto;
+    width: 85%;
+    max-width: 850px;
+    height: 500px;
+    border: 3px solid green;
+    padding: 25px;
+    font-family: Sans-Serif;
+    font-size: 25px;
+    color: #fff;
+    background-color: blue;
+    background-image: url(https://images.unsplash.com/photo-1499346030926-9a72daac6c63?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
+    background-repeat: no-repeat;
+    background-size: 1200px 900px;
+}
+
+button {
+    width: 85%;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Sans-Serif;
+    background-color: #e67316;
+    border-radius: 6px;
+}
+td {width: 100px;}
+label {font-weight: bold;font-family: 'Grandstander', cursive;color:red;font-size: 24;background-color: lightgrey;}
+#sum {font-size: 50px;font-family: 'Grandstander', cursive;}
+label#title {font-size:35px;}
+
+p#info, p#info a {
+    font-size: 20px;
+    font-family: 'Ranchers', cursive;
+    border-width: 5px;
+    background-color: transparent;
+    color: red;
+    height: 22px;
+}
+img {
+  width: 85%;
+  max-width: 850px;
+}

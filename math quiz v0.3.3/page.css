@@ -1,0 +1,54 @@
+input,
+select {
+    width: 80%;
+    padding: 5px;
+    font-size: 20px;
+    border-width: 5px;
+    border-color: rgb(97, 93, 93);
+    color: #000000;
+    border-style: solid;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(66, 66, 66, .75);
+    text-align: center;
+}
+
+div#main {
+    text-align: center;
+    margin: auto;
+    width: 900px;
+    height: 500px;
+    border: 3px solid green;
+    padding: 25px;
+    font-family: Sans-Serif;
+    font-size: 25px;
+    color: #fff;
+    background-color: #034497;
+}
+
+button {
+    width: 80%;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Sans-Serif;
+    background-color: #e67316;
+    border-radius: 6px;
+}
+td {width: 50px;}
+label#title {font-weight: bold;}
+#sum {font-size: 40px;}
+#title {font-size: 40px;}
+#title1 {
+  font-size: 30px;
+  font-family: Impact;
+  font-weight: bold;
+  color: rgba(0, 255, 21, 0.767);
+}
+p#info {
+    font-size: 22px;
+    font-family: Impact;
+    background-color: brown;
+    color: chartreuse;
+    height: 22px;
+}

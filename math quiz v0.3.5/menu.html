@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Math Quiz Online - Play in Browser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="page.css">
+<script src="./js/main.js"></script>
+</head>
+
+<body onload="onload()">
+    <div id="main">
+        <form><img src="logo.png"></form>
+        <form id="name_form"><label for="name">Enter Your Name </label> <br />
+            <input id="name" type="text" autocomplete="name" pattern="[A-Za-z]" required></form><br />
+            <label id="stats">%1 games played with %2 points in total!</label>
+            <br /><br />
+        <form><label for="diff_level">Pick Difficulty Level</label><br />
+            <select id="diff">
+                    <option value="1">Extra-Easy (1-10)</option>
+                    <option value="2">Easy (11-20)</option>
+                    <option value="3">Normal (21-30)</option>
+                    <option value="4">Hard (31-40)</option>
+                    <option value="5">Extra-Hard (41-50)</option>
+                </select><br /><br /></form>
+                
+        <button onclick="start()">Start Quiz</button>
+        <p id="info"> Game by <a href="https://github.com/McJoe21" target="_blank">McJoe21</a> / Version 0.3.5</p></div>
+</body>
+</html>

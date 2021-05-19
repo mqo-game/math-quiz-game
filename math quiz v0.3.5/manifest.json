@@ -1,0 +1,9 @@
+{  "name": "Math Quiz Online",
+  "short_name": "MQO",
+  "theme_color": "#f34421",
+  "background_color": "#000000",
+  "display": "fullscreen",
+  "scope": "/",
+  "start_url": "index.html",
+  "icons":[{"src":"icons/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"icons/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}]
+}

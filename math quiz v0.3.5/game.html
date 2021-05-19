@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Math Quiz Online - Play in Browser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="page.css">
+</head>
+
+<body onload="game()">
+<div id="main">
+  <script src="./js/main.js"></script>
+    <form><img src="logo.png"></form>
+    <form><label id="title" class="title">Question <span id="q"></span></label>
+    <p id="sum" class="sum"> </p><!---</form>--->
+    <input id="a" type="number" max="999" pattern="[0-9]{4}" required></form>
+    <button type="submit" value="Submit" onclick="check()">Check Answer</button>
+    <center>
+    <table align="center">
+        <tbody>
+        <tr>
+        <td><button onclick="type_num(1)">1</button></td>
+        <td><button onclick="type_num(2)">2</button></td>
+        <td><button onclick="type_num(3)">3</button></td>
+        <td><button onclick="type_num(4)">4</button></td>
+        <td><button onclick="type_num(5)">5</button></td>
+        </tr></td>
+        </tbody></table>
+        
+        <table><tbody>
+        <tr>
+        <td><button onclick="type_num(6)">6</button></td>
+        <td><button onclick="type_num(7)">7</button></td>
+        <td><button onclick="type_num(8)">8</button></td>
+        <td><button onclick="type_num(9)">9</button></td>
+        <td><button onclick="type_num(0)">0</button></td>
+        </tr></td>
+        </tbody></table>
+        
+        <table><tbody><td><tr>
+        <td><button onclick="type_num(10)">Clear</button>
+        </tr></td></tbody></table>
+        </center>
+</div>
+
+</body>
+
+</html>
