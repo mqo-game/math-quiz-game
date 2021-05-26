@@ -5,7 +5,7 @@ var u = {
  "name": "demo",
  "pts": 0,
  "plays": 0,
- "ver": "036"
+ "ver": "040"
 };
 
 //set const variables
@@ -52,24 +52,17 @@ function end_game(pts,pass) {
  } else {
   $text.innerHTML = $text.innerHTML.replace('%6', "losed but you did last until")
  }
-
-//update home screen!
- document.getElementById('stats').innerHTML = stats.replace("%1", u.plays).replace("%2", u.pts)
-    if (u.name) {
-     document.getElementById("name").value = u.name
-    }
- 
 }
 
 //game functions
 function start() {
- var name = document.getElementById("name").value,
- sel = document.getElementsByTagName('select')
+ const form = document.getElementById("game_setup")
+var name = form.name.value
 
  if (name != "" && /[A-Za-z][1-9][ ]/) {
   if (name.length < 30 && name.length > 1) {
-   sessionStorage.diff = sel[0].value
-   sessionStorage.target = sel[1].value
+   sessionStorage.diff = form.diff.value
+   sessionStorage.target = form.target.value
    u.name = name
 
    game();
@@ -125,8 +118,8 @@ function new_sum() {
   $answer = $num[0] - $num[1]
   $sum = "-"
  } else if ($type == 3) {
-  $answer = $sum[0] * $num[1]
-  $sum = "x"
+  $answer = $sum[0] * $num[1];
+  $sum = "x";
  }
 
  document.getElementById("sum").innerHTML = $num[0] + " " + $sum + " " + $num[1] + " = ?";
