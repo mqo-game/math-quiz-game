@@ -22,7 +22,7 @@ if (!localStorage["mqo-user"]) {
 }
 
 if ('serviceWorker' in navigator && 'PushManager' in window) {
- navigator.serviceWorker.register('/app.js', {
+ navigator.serviceWorker.register('./app.js', {
   scope: location.pathname
  });
 }
