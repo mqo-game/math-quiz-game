@@ -56,7 +56,7 @@ function end_game(pts,pass) {
 
 //game functions
 function start() {
- const form = document.getElementById("game_setup")
+ const form = document.getElementById("setup")
 var name = form.name.value
 
  if (name != "" && /[A-Za-z][1-9][ ]/) {
