@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 **Describe the bug**
-A clear and concise description of what the bug is.
+A clear description of what the bug is.
 
 **To Reproduce**
 Steps to reproduce the behavior:
@@ -17,14 +17,14 @@ Steps to reproduce the behavior:
 4. See error
 
 **Expected behavior**
-A clear and concise description of what you expected to happen.
+A clear description of what you expected to happen.
 
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
 **Device:**
-- OS: (Windows/Linux/IOS)
-- Browser: (chrome/Firefox/Safari)
+- OS: (e.g. Windows/Linux/IOS)
+- Browser: (e.g. chrome/Firefox/Safari)
 
 **Additional context**
 Add any other context about the problem here.

@@ -21,7 +21,7 @@ self.addEventListener('install', function(event) {
 let deferredPrompt;
 
 self.addEventListener('beforeinstallprompt', (e) => {
- deferredPrompt = e;
+ deferredPrompt = e
  // Update UI notify the user they can install the PWA
  showInstallPromotion();
 });
@@ -44,7 +44,7 @@ function fetchAndCache(url) {
     if (!response.ok) {
       throw Error(response.statusText);
     }
-    return caches.open('mqo-036')
+    return caches.open('mqo-040')
     .then(function(cache) {
       cache.put(url, response.clone());
       return response;

@@ -49,6 +49,8 @@ button {
  background-color: #e67316;
  border-radius: 6px;
 }
+.start_btn {width: 75%;}
+.clear_btn {width: 300px;}
 td {
  width: 80px;
 }
@@ -62,7 +64,7 @@ label {
 }
 
 img {
- width: 80%;
+ width: 75%;
  max-width: 800px;
 }
 .print {

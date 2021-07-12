@@ -21,6 +21,7 @@
  <link rel="manifest" href="site.webmanifest">
  <link rel="app-touch-icon" href="/icons/app-touch-icon.png" />
  <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon" />
+ <link rel="icon" href="icons/favicon.ico" type="image/x-icon" />
 
  <meta name="keywords" content="education,math,games,online,free,school,math games,quiz, sums,add,takeaway,mixed,times,online games,home,teachers,students, learning">
  <meta name="description" content="☆ Free to Play Online Math Quiz Game for Home and School Learning ☆ Made before lockdown to help out people ☆ No login required to play! ☆ by mcjoe21.com ☆">
@@ -39,7 +40,10 @@
  <center>
   
   <img src="images/logo.png" alt="logo">
+
   <div id="menu" class="page" style="display:block">
+    <noscript style="background-color: black;color: white;">Please have JavaScript and cookies turned on to play this game.</noscript>
+
    <form id="setup">
     <label for="name">Enter Your Name</label> <br />
     <input id="name" type="text" autocomplete="name" pattern="[A-Za-z][1-9][]{30}" required>
@@ -63,14 +67,8 @@
      <option value="100">Target: 100 Points</option>
     </select>
    </form>
-   <button onclick="start()">Start Quiz</button>
+   <button class="start_btn" onclick="start()">Start Quiz</button>
 
-   <script>
-    document.getElementById('stats').innerHTML = stats.replace("%1", u.plays).replace("%2", u.pts)
-    if (u.name) {
-     document.getElementById("name").value = u.name
-    }
-   </script>
   </div>
 
   <div id="game" class="page" style="display:none">
@@ -82,7 +80,7 @@
 
     <input id="a" type="number" max="999" pattern="[0-9]{4}" disabled>
    </form>
-   <button onclick="check()">Check Answer</button>
+   <button class="start_btn" onclick="check()">Check Answer</button>
    <center>
     <table align="center">
      <tbody>
@@ -107,7 +105,7 @@
     <table>
      <tbody>
       <tr>
-       <td><button onclick="type_num(10)">Clear</button>
+       <td><button class="clear_btn" onclick="type_num(10)">Clear Answer</button>
        </tr>
       </tbody>
      </table>
@@ -121,7 +119,7 @@
     </div>
     <button onclick="pages('menu')" class="noprint">Goto Menu</button>
     <h5 class="print">
-     Play the game at <u>mqo.mcjoe21.com</u>  free!
+     Play the game at <u>mqo.mcjoe21.com</u> for free!
     </h5>
    </div>
 

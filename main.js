@@ -1,21 +1,32 @@
-//on page load
-const date = new Date()
-
 var u = {
- "name": "demo",
+ "name": "MQO",
  "pts": 0,
  "plays": 0,
- "ver": "040"
+ "ver": "041"
 };
+
+window.addEventListener('keydown',(k)=>{
+  
+})
 
 //set const variables
 const stats = "%1 games played with %2 points in total!"
 const page = document.getElementsByClassName('page')
 
+//on page load
+const date = new Date()
+var update_stats = window.onload = function(){
+  document.getElementById('stats').innerHTML = stats.replace("%1", u.plays).replace("%2", u.pts)
+  if (u.name) {
+   document.getElementById("name").value = u.name
+ }
+ return document.getElementById('stats').innerHTML;
+ }
+
 //user data checks
 u.date = date.toDateString();
 if (!localStorage["mqo-user"]) {
- localStorage["mqo-user"] = JSON.stringify(u);
+ try {localStorage["mqo-user"] = JSON.stringify(u);} catch (e){alert('Please unblock cookies to play game!')}
 } else {
  u = JSON.parse(localStorage["mqo-user"]);
  u.date = date.toDateString();
@@ -33,6 +44,8 @@ function end_game(pts,pass) {
  u.pts = Number(u.pts) + pts
  u.pts2 = pts
  localStorage["mqo-user"] = JSON.stringify(u);
+ $a.value = ""
+ update_stats()
  pages('game-over')
 
  //fills in end screen
@@ -135,7 +148,7 @@ function check() {
    
    $target = Number(sessionStorage.target)
  if ($target != isNaN) {
-  if ($pts > $target) {
+  if ($pts > $target-1) {
    end_game($pts,true)
   }
  }
