@@ -1,5 +1,6 @@
 [V] Clear answer nox when lose
 [V] Change start button size
-[?] Fix hame stats updating issue
-[?] Fix score limit issues
-[V] Fixed catch version in app.js
+[V] Fix hame stats updating issue
+[V] Changed home text background colour
+[ ] Fix score limit issues
+[V] Fixed cache version in app.js

@@ -1,6 +1,7 @@
+var ver = "041"
 self.addEventListener('install', function(event) {
  event.waitUntil(
-  caches.open('mqo-040').then(function(cache) {
+  caches.open(ver).then(function(cache) {
    return cache.addAll(
     [
      '/css/print.css',
@@ -44,7 +45,7 @@ function fetchAndCache(url) {
     if (!response.ok) {
       throw Error(response.statusText);
     }
-    return caches.open('mqo-040')
+    return caches.open(ver)
     .then(function(cache) {
       cache.put(url, response.clone());
       return response;

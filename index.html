@@ -41,24 +41,24 @@
   
   <img src="images/logo.png" alt="logo">
 
-  <div id="menu" class="page" style="display:block">
+  <div id="menu" class="page">
     <noscript style="background-color: black;color: white;">Please have JavaScript and cookies turned on to play this game.</noscript>
 
    <form id="setup">
-    <label for="name">Enter Your Name</label> <br />
-    <input id="name" type="text" autocomplete="name" pattern="[A-Za-z][1-9][]{30}" required>
+    <label for="name" class="home">Enter Your Name</label> <br />
+    <input name="name" type="text" autocomplete="name" pattern="[A-Za-z][1-9][ ]{30}" required>
    <br />
-   <label id="stats">Loading data...</label>
+   <label id="stats" class="home">Loading data...</label>
    <br /><br />
-    <label for="diff_level">Pick Game Settings</label><br />
-    <select name="" id="diff">
+    <label class="home" for="diff_level">Pick Game Settings</label><br />
+    <select name="diff" id="diff">
      <option value="1">Difficulty: Extra-Easy (1-10)</option>
      <option value="2">Difficulty: Easy (11-20)</option>
      <option value="3">Difficulty: Normal (21-30)</option>
      <option value="4">Difficulty: Hard (31-40)</option>
      <option value="5">Difficulty: Extra-Hard (41-50)</option>
     </select><br /><br />
-    <select id="target">
+    <select name="target" id="target">
      <option value="any">Target: Endless</option>
      <option value="20"> Target: 20 Points</option>
      <option value="40">Target: 40 Points</option>
@@ -66,12 +66,11 @@
      <option value="80">Target: 80 Points</option>
      <option value="100">Target: 100 Points</option>
     </select>
-   </form>
-   <button class="start_btn" onclick="start()">Start Quiz</button>
-
+    <button class="start_btn" onclick="start()">Start Quiz</button>
+  </form>
   </div>
 
-  <div id="game" class="page" style="display:none">
+  <div id="game" class="page" hidden>
 
    <form>
     <h1 style="color: red;"><u>Question <span id="q"></span></u></h1>
@@ -112,7 +111,7 @@
     </center>
    </div>
 
-   <div class="page" id="game-over" style="display:none;background-color:white;">
+   <div id="game-over" class="page" style="background-color:white;" hidden>
     <div id="print">
      <h2 id="end">End of Game!</h2>
      <h4 id="text" style="color: red;">Loading text...</h4>
@@ -123,8 +122,8 @@
     </h5>
    </div>
 
-   <div class="page" id="welcome" style="display:none">
-    <h2>Welcome!</h2>
+   <div class="page" id="welcome" hidden>
+    <h2>Welcome!</h2> 
     <h4>
      Welcome to my math quiz game,<br />
      Whenever your playing this at home or school, I'm hoping that you learn something and also having fun while doing it!
@@ -144,7 +143,7 @@
    <footer id="footer" class="noprint">
     <center><b><u>
      <p>
-      Game by <a href="https://github.com/McJoe21" target="_blank">McJoe21</a> • Version 0.4.0
+      Game by <a href="https://github.com/McJoe21" target="_blank">McJoe21</a> • Version 0.4.1
      </p>
      • <a href="javascript:openFullscreen();">Go Full Screen</a> • <a href="https://www.facebook.com/Mathquizonline">Facebook</a> • <a href="https://mcJoe21.com/privacy.html">Your Data</a></u></b></center>
 

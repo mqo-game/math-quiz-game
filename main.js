@@ -4,9 +4,24 @@ var u = {
  "plays": 0,
  "ver": "041"
 };
-
+var pageid = 'menu';
 window.addEventListener('keydown',(k)=>{
-  
+  if (k.code = "Enter") {
+    switch (pageid) {
+      case 'game-over':
+        page('menu')
+        break;
+      case 'game':
+        check()
+        break;
+      case 'menu':
+        start()
+        break;
+    
+      default:
+        break;
+    }
+  } else {return;}
 })
 
 //set const variables
@@ -69,10 +84,10 @@ function end_game(pts,pass) {
 
 //game functions
 function start() {
- const form = document.getElementById("setup")
-var name = form.name.value
+  const form = document.getElementById("setup")
+  var name = form.name.value
 
- if (name != "" && /[A-Za-z][1-9][ ]/) {
+ if (name != "") {
   if (name.length < 30 && name.length > 1) {
    sessionStorage.diff = form.diff.value
    sessionStorage.target = form.target.value
@@ -83,9 +98,9 @@ var name = form.name.value
   } else {
    alert("Keep name under 30 characters!"); name = ""
   }
- } else {
+ }/*  else {
   alert("Please enter your name.\n\nName conditions:\n> Most include characters\n> Can include spaces")
- }
+ } */
 }
 
 function game() {
@@ -164,11 +179,12 @@ function check() {
 
 //page switcher
 function pages(pg) {
- if (page[pg].style.display != 'block') {
+ if (!page[pg].hidden) {
   for (var x = 0; x < page.length; x++) {
-   page[x].style.display = 'none'
-
+   page[x].hidden = true
   }
-  page[pg].style.display = 'block'
+  page[pg].hidden = false
+  pageid = pg
+  console.info(pageid)
  }
 }

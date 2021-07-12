@@ -4,7 +4,7 @@
 "theme_color": "#00ccff",
 "background_color": "#000000",
 "display": "fullscreen",
-"start_url": "/?app=true&var=041",
+"start_url": "/?app&var=041",
 "orientation": "portrait-primary",
 "dir": "ltr",
 "prefer_related_applications":false,

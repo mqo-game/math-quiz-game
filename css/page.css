@@ -51,6 +51,7 @@ button {
 }
 .start_btn {width: 75%;}
 .clear_btn {width: 300px;}
+.home {background-color: white;border-radius: 10px;}
 td {
  width: 80px;
 }
