@@ -1,11 +1,11 @@
-var ver = "041"
 self.addEventListener('install', function(event) {
  event.waitUntil(
-  caches.open(ver).then(function(cache) {
+  caches.open('math-quiz-v0.4.1').then(function(cache) {
    return cache.addAll(
     [
      '/css/print.css',
      '/css/page.css',
+     '/index.html',
      '/images/clouds.png',
      '/images/logo.png',
      'icons/android-chrome-192x192.png',
@@ -45,7 +45,7 @@ function fetchAndCache(url) {
     if (!response.ok) {
       throw Error(response.statusText);
     }
-    return caches.open(ver)
+    return caches.open('math-quiz-v0.4.1')
     .then(function(cache) {
       cache.put(url, response.clone());
       return response;
