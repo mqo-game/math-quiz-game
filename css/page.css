@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
 
 input,
 select {
  width: 80%;
  padding: 5px;
  font-size: 22px;
- font-family: 'Ranchers', cursive;
+ font-family: 'Ranchers', Courier, Lucida, monospace;
  border-width: 5px;
  border-color: rgb(97, 93, 93);
  color: #000000;
@@ -26,7 +25,7 @@ body {
 
 .page {
  margin: auto;
- width: 85%;
+ width: 80%;
  max-width: 900px;
  height: 590px;
  padding: 10px;
@@ -49,20 +48,22 @@ button {
  background-color: #e67316;
  border-radius: 6px;
 }
-.start {width: 75%;max-width:500px;}
-.clear {width: 75%;max-width:300px;}
+#menu form button {width: 75%;max-width:400px;}
+#game button {width: 80%;max-width:500px;}
 #setup label, .header {background-color: white;border-radius: 10px;}
-.page #game-over {display:none;background-color:white;}
+#game-over {display:none;background-color:white;}
+.game {font-size: 55px;font-family: 'Ranchers', Courier, Lucida, monospace;font-weight: bold;}
+.game_small {font-size: 35px;font-family: 'Ranchers', Courier, Lucida, monospace;font-weight: bold;}
 td {width: 80px;}
 label, h2 {
  font-weight: bold;
- font-family: 'Grandstander', cursive;
+ font-family: 'Courier New', Courier, Lucida 'Sans Typewriter', 'Lucida Typewriter', monospace;
  color: red;
 }
 label {font-size: 25;}
 
 img {
- width: 80%;
+ width: 90%;
  max-width: 800px;
 }
 .print {

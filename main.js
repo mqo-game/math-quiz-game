@@ -1,23 +1,26 @@
-//set variables
-const page = document.querySelectorAll('.page')
-const stats = "%1 games played with %2 points in total!"
+//on page load
 const date = new Date()
+
 var u = {
  "name": "demo",
  "pts": 0,
  "plays": 0,
- "ver": 041,
- "welcome": false
+ "ver": "041",
+ "data":{"pts":{},"plays":{}}
 };
+
+//set const variables
+const stats = "%1 games played with %2 points in total!"
+const page = document.getElementsByClassName('page')
 
 //user data checks
 u.date = date.toDateString();
 if (!localStorage["mqo-user"]) {
  localStorage["mqo-user"] = JSON.stringify(u);
- pages('welcome')
 } else {
  u = JSON.parse(localStorage["mqo-user"]);
  u.date = date.toDateString();
+ if(u.ver = "040"){u.data = {"pts":{},"plays":{}};u.ver = "041"}
 }
 
 if ('serviceWorker' in navigator && 'PushManager' in window) {
@@ -134,12 +137,13 @@ function check() {
    
    $target = Number(sessionStorage.target)
  if ($target != isNaN) {
-  if ($pts > $target) {
+  if ($pts > $target-1) {
    end_game($pts,true)
   }
  }
    
    document.getElementById("q").innerHTML = $q
+   document.getElementById("pts").innerHTML = $pts
    $a.value = ""
    new_sum()
   } else if ($a.value != "") {
@@ -150,10 +154,11 @@ function check() {
 
 //page switcher
 function pages(pg) {
-  if (page[pg].style.display != 'block') {
-   for (var x = 0; x < page.length; x++) {
-    page[x].style.display = 'none'
-   }
-   page[pg].style.display = 'block'
+ if (page[pg].style.display != 'block') {
+  for (var x = 0; x < page.length; x++) {
+   page[x].style.display = 'none'
+
   }
+  page[pg].style.display = 'block'
  }
+}

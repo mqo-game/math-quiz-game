@@ -22,7 +22,7 @@
  <link rel="app-touch-icon" href="/icons/app-touch-icon.png" />
  <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon" />
 
- <meta name="keywords" content="education,math,games,online,free,school,math games,quiz, sums,add,takeaway,mixed,times,online games,home,teachers,students, learning">
+ <meta name="keywords" content="education,math,games,online,free,school,math games,quiz, sums,add,takeaway,mixed,times,online games,home,teachers,students,learning">
  <meta name="description" content="☆ Free to Play Online Math Quiz Game for Home and School Learning ☆ Made before lockdown to help out people ☆ No login required to play! ☆ by mcjoe21.com ☆">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="css/page.css">
@@ -44,8 +44,8 @@
    <br />
    <label id="stats">Loading data...</label>
    <br /><br />
-    <label for="diff_level">Pick Game Settings</label><br />
-    <select name="" id="diff">
+    <label>Pick Game Settings</label><br />
+    <select id="diff">
      <option value="1">Difficulty: Extra-Easy (1-10)</option>
      <option value="2">Difficulty: Easy (11-20)</option>
      <option value="3">Difficulty: Normal (21-30)</option>
@@ -60,20 +60,21 @@
      <option value="80">Target: 80 Points</option>
      <option value="100">Target: 100 Points</option>
     </select><br /><br/>
-    <button class="start" onclick="start()">Start Quiz</button>
+    <button onclick="start()">Start Quiz</button>
    </form>
 </section>
 
-  <section id="game" class="page" style="display:none">
+  <section id="game" class="page" style="display:none"><br>
 
    <form>
-    <h1 style="color: red;" class="header"><u>Question <span id="q"></span></u></h1>
+    <label style="color: red;" class="header game">Question <span id="q"></span></label><br>
+    <label style="color: red;" class="header game_small"><span id="pts">0</span> Points!</label><br><br>
 
-    <h1 id="sum" style="color:white;"></h1><br />
+    <label id="sum" style="color:white;" class="game"></label><br /><br>
 
     <input id="a" type="number" max="999" pattern="[0-9]{4}" disabled>
    </form>
-   <button class="start" onclick="check()">Check Answer</button>
+   <button onclick="check()">Check Answer</button>
     <table align="center">
      <tbody>
       <tr>
@@ -93,14 +94,8 @@
       </tr>
      </tbody>
     </table>
+    <button onclick="type_num(10)">Clear</button>
 
-    <table>
-     <tbody>
-      <tr>
-       <td><button class="clear" onclick="type_num(10)">Clear</button>
-       </tr>
-      </tbody>
-     </table>
    </section>
 
    <section id="game-over" class="page" style="display:none">
