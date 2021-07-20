@@ -6,7 +6,7 @@ select {
  padding: 5px;
  font-size: 22px;
  font-family: 'Ranchers', Courier, Lucida, monospace;
- border-width: 5px;
+ border-width: 3px;
  border-color: rgb(97, 93, 93);
  color: #000000;
  border-style: solid;
@@ -48,24 +48,28 @@ button {
  background-color: #e67316;
  border-radius: 6px;
 }
-#menu form button {width: 75%;max-width:400px;}
-#game button {width: 80%;max-width:500px;}
-#setup label, .header {background-color: white;border-radius: 10px;}
-#game-over {display:none;background-color:white;}
-.game {font-size: 55px;font-family: 'Ranchers', Courier, Lucida, monospace;font-weight: bold;}
-.game_small {font-size: 35px;font-family: 'Ranchers', Courier, Lucida, monospace;font-weight: bold;}
 td {width: 80px;}
 label, h2 {
  font-weight: bold;
  font-family: 'Courier New', Courier, Lucida 'Sans Typewriter', 'Lucida Typewriter', monospace;
  color: red;
 }
-label {font-size: 25;}
+label {font-size: 25px;}
 
-img {
- width: 90%;
- max-width: 800px;
-}
-.print {
- display: none
+img {width: 80%;max-width: 690px;}
+
+#menu form button {width: 75%;max-width:400px;}
+#menu form label, .header {background-color: white;border-radius: 10px;}
+#game button {width: 80%;max-width:500px;}
+#menu_alert {background-color:black;}
+#menu_alert a {color:blue;}
+#game-over {display:none;background-color:white;}
+.game {font-size: 55px;font-weight: bold;}
+.small {font-size: 40px;}
+.print {display: none;}
+
+@media only screen and (max-width: 600px) {
+  img {width: 100%;}
+  #game button {width: 85%;max-width:600px;}
+  input #a {width:100%;}
 }

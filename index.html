@@ -37,8 +37,8 @@
   <center>
   <img src="images/logo.png" alt="logo">
   <section id="menu" class="page" style="display:block">
-    <noscript><label class="header">Please turn on javascript and cookies to play game!</label></noscript><br><br>
-   <form id="setup">
+    <noscript><label class="header" id="menu_alert">Please turn on javascript and cookies to play game!</label></noscript><br><br>
+   <form>
     <label for="name">Enter Your Name</label> <br />
     <input id="name" type="text" autocomplete="name" pattern="[A-Za-z][1-9][]{30}" required>
    <br />
@@ -53,12 +53,12 @@
      <option value="5">Difficulty: Extra-Hard (41-50)</option>
     </select><br /><br />
     <select id="target">
-     <option value="any">Target: Endless</option>
      <option value="20"> Target: 20 Points</option>
      <option value="40">Target: 40 Points</option>
      <option value="60">Target: 60 Points</option>
      <option value="80">Target: 80 Points</option>
      <option value="100">Target: 100 Points</option>
+     <option value="any" disabled>Target: 🔐 Endless</option>
     </select><br /><br/>
     <button onclick="start()">Start Quiz</button>
    </form>
@@ -68,7 +68,7 @@
 
    <form>
     <label style="color: red;" class="header game">Question <span id="q"></span></label><br>
-    <label style="color: red;" class="header game_small"><span id="pts">0</span> Points!</label><br><br>
+    <label id="pts" style="color: red;" class="header game small">0 Points!</label><br><br>
 
     <label id="sum" style="color:white;" class="game"></label><br /><br>
 
@@ -132,7 +132,7 @@
      <p>
       Game by <a href="https://github.com/McJoe21" target="_blank">McJoe21</a> • Version 0.4.0
      </p>
-     • <a href="javascript:openFullscreen();">Go Full Screen</a> • <a href="https://www.facebook.com/mathquizonline">Facebook</a> • <a href="https://mcJoe21.com/privacy.html">Your Data</a></u></b></center>
+     • <a href="javascript:openFullscreen();">Go Full Screen</a> • <a href="https://www.facebook.com/mathquizonline">Facebook</a> • <a href="https://mcJoe21.com/privacy.html">Your Data</a></u></b>
 
     <script type="text/javascript" charset="utf-8">
      const elem = document
@@ -151,20 +151,20 @@
 
     <script>
      var _uox = _uox || {}; (function() {
-      var s = document.createElement("script");
+      var s = document.createElement("script"); 
       s.src = "https://static.usuarios-online.com/uo2.min.js"; document.getElementsByTagName("head")[0].appendChild(s);
      })();
     </script>
-    <a href="https://www.usuarios-online.com/en/" data-id="7d3d7f92b89a5845c4658f0aad590a73" data-type="default" target="_blank" id="uox_link">users online</a>
-   </footer>
-</center>
+    <a href="https://www.usuarios-online.com/en/" data-id="7d3d7f92b89a5845c4658f0aad590a73" data-type="default" target="_blank" id="uox_link">users online</a></footer></center>
 
 	<script src="./main.js" type="text/javascript" charset="utf-8"></script>
 <script>
+function home_stats(){
     document.getElementById('stats').innerHTML = stats.replace("%1", u.plays).replace("%2", u.pts)
     if (u.name) {
-     document.getElementById("name").value = u.name
-    }
+     form.name.value = u.name
+    }};
+home_stats()
    </script>
  </body>
 </html>
