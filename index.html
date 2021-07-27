@@ -21,6 +21,8 @@
  <link rel="manifest" href="site.webmanifest">
  <link rel="app-touch-icon" href="/icons/app-touch-icon.png" />
  <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon" />
+ <meta name="author" content="mcjoe21">
+	<meta name="theme-color" content="blue">
 
  <meta name="keywords" content="education,math,games,online,free,school,math games,quiz, sums,add,takeaway,mixed,times,online games,home,teachers,students,learning">
  <meta name="description" content="☆ Free to Play Online Math Quiz Game for Home and School Learning ☆ Made before lockdown to help out people ☆ No login required to play! ☆ by mcjoe21.com ☆">
@@ -35,9 +37,9 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <!-- End Google Tag Manager (noscript) -->
   <center>
-  <img src="images/logo.png" alt="logo">
+  <img id="logo" src="images/logo.png" alt="game logo">
   <section id="menu" class="page" style="display:block">
-    <noscript><label class="header" id="menu_alert">Please turn on javascript and cookies to play game!</label></noscript><br><br>
+    <noscript><label class="header menu_msg">Please turn on javascript and cookies to play game!</label></noscript>
    <form>
     <label for="name">Enter Your Name</label> <br />
     <input id="name" type="text" autocomplete="name" pattern="[A-Za-z][1-9][]{30}" required>
@@ -61,14 +63,32 @@
      <option value="any" disabled>Target: 🔐 Endless</option>
     </select><br /><br/>
     <button onclick="start()">Start Quiz</button>
+    <button onclick="pages(1)">Missions</button>
    </form>
+</section>
+
+<section id="missions" class="page" style="display:none">
+<label class="header game">Missions</label><br />
+<label class="header game smaller" id="task_count"></label><br /><br />
+
+<ul id="tasks">
+	<li><button class="task" id="plays">Play %0 games in total (%1 plays)</button></li>
+	<li><button class="task" id="earn_total">Earn %0 points in total (%1 earned)</button></li>
+		<li><button class="task" id="earn_game">Earn %0 points in a game (last %1 points)</button></li>
+		<li><button>Coming Soon...</button></li>
+		<li><button>Coming Soon...</button></li>
+		<li hidden><button class="task" id="dummy">dummy</button></li>
+</ul><br />
+
+<button onclick="task_claim()">Claim Points</button><br />
+<button onclick="pages(0)">Home Menu</button>
 </section>
 
   <section id="game" class="page" style="display:none"><br>
 
    <form>
     <label style="color: red;" class="header game">Question <span id="q"></span></label><br>
-    <label id="pts" style="color: red;" class="header game small">0 Points!</label><br><br>
+    <label id="pts" style="color: red;" class="header game small">No Points!</label><br><br>
 
     <label id="sum" style="color:white;" class="game"></label><br /><br>
 
@@ -94,8 +114,8 @@
       </tr>
      </tbody>
     </table>
-    <button onclick="type_num(10)">Clear</button>
-
+    <button onclick="type_num(10)">Clear</button><br />
+    <button id="quit" data-pts="0" onclick="end_game(this.dataset.pts,false,true)">Quit Game</button>
    </section>
 
    <section id="game-over" class="page" style="display:none">
@@ -130,9 +150,9 @@
 
    <footer id="footer" class="noprint"><b><u>
      <p>
-      Game by <a href="https://github.com/McJoe21" target="_blank">McJoe21</a> • Version 0.4.0
+      Game by <a href="https://github.com/McJoe21" target="_blank">McJoe21</a> • Version 0.4.1-d6
      </p>
-     • <a href="javascript:openFullscreen();">Go Full Screen</a> • <a href="https://www.facebook.com/mathquizonline">Facebook</a> • <a href="https://mcJoe21.com/privacy.html">Your Data</a></u></b>
+     • <a href="javascript:openFullscreen();">Go Full Screen</a> • <a href="https://www.facebook.com/mathquizonline">Facebook</a> • <a href="https://mcJoe21.com/privacy.html">Your Data</a></u></b><br />
 
     <script type="text/javascript" charset="utf-8">
      const elem = document
@@ -155,7 +175,7 @@
       s.src = "https://static.usuarios-online.com/uo2.min.js"; document.getElementsByTagName("head")[0].appendChild(s);
      })();
     </script>
-    <a href="https://www.usuarios-online.com/en/" data-id="7d3d7f92b89a5845c4658f0aad590a73" data-type="default" target="_blank" id="uox_link">users online</a></footer></center>
+    <a href="https://www.usuarios-online.com/en/" data-id="7d3d7f92b89a5845c4658f0aad590a73" data-type="default" target="_blank" id="uox_link"></a></footer></center>
 
 	<script src="./main.js" type="text/javascript" charset="utf-8"></script>
 <script>
@@ -165,6 +185,7 @@ function home_stats(){
      form.name.value = u.name
     }};
 home_stats()
+if(!sessionStorage.redir){window.location += "?dev=1";sessionStorage.redir = true}
    </script>
  </body>
 </html>

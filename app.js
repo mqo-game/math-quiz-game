@@ -1,21 +1,23 @@
-self.addEventListener('install', function(event) {
- event.waitUntil(
-  caches.open('math-quiz-v0.4.1').then(function(cache) {
-   return cache.addAll(
-    [
-     '/css/print.css',
-     '/css/page.css',
-     '/index.html',
-     '/images/clouds.png',
-     '/images/logo.png',
-     'icons/android-chrome-192x192.png',
-     'icons/android-chrome-512x512.png',
-     'icons/favicon.ico',
-     'icons/favicon-32x32.ico'
-    ]
-   );
-  })
- );
+const toCache = [
+  '/css/print.css',
+  '/css/page.css',
+  '/index.html',
+  '/images/clouds.png',
+  'images/night.jpg',
+  '/images/logo.png',
+  'icons/android-chrome-192x192.png',
+  'icons/android-chrome-512x512.png',
+  'icons/favicon.ico',
+  'icons/favicon-32x32.ico'
+ ], cacheName = "math-quiz-v041-d6"
+
+ self.addEventListener('install', (e) => {
+  console.log('[Service Worker] Install');
+  e.waitUntil((async () => {
+    const cache = await caches.open(cacheName);
+    console.log('[Service Worker] Caching all: app shell and content');
+    await cache.addAll(toCache);
+  })());
 });
 
 // Initialize deferredPrompt for use later to show browser install prompt.
@@ -29,30 +31,15 @@ self.addEventListener('beforeinstallprompt', (e) => {
 
 self.addEventListener('activate', (evt) => {})
 
-self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.match(event.request)
-    .then(function(response) {
-      return response || fetchAndCache(event.request);
-    })
-  );
+self.addEventListener('fetch', (e) => {
+  e.respondWith((async () => {
+    const r = await caches.match(e.request);
+    console.log(`[Service Worker] Fetching resource: ${e.request.url}`);
+    if (r) { return r; }
+    const response = await fetch(e.request);
+    const cache = await caches.open(cacheName);
+    console.log(`[Service Worker] Caching new resource: ${e.request.url}`);
+    cache.put(e.request, response.clone());
+    return response;
+  })());
 });
-
-function fetchAndCache(url) {
-  return fetch(url)
-  .then(function(response) {
-    // Check if we received a valid response
-    if (!response.ok) {
-      throw Error(response.statusText);
-    }
-    return caches.open('math-quiz-v0.4.1')
-    .then(function(cache) {
-      cache.put(url, response.clone());
-      return response;
-    });
-  })  
-  .catch(function(error) {
-    console.log('Request failed:', error);
-    // You could return a custom offline 404 page here
-  });
-}

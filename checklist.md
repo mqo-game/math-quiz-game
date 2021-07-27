@@ -1,4 +1,4 @@
-[V] Clear answer nox when lose
+[V] Clear answer now when lose
 [V] Change start button size
 [V] Fix hame stats updating issue
 [V] Changed text background

@@ -16,6 +16,8 @@ select {
  text-align: center;
 }
 
+input#a {max-width: 500px;}
+
 body {
  background-color: blue;
  background-image: url(../images/clouds.png);
@@ -31,7 +33,6 @@ body {
  padding: 10px;
  font-family: Sans-Serif;
  font-size: 25px;
- color: #fff;
 }
 
 h2, h4 {
@@ -55,21 +56,26 @@ label, h2 {
  color: red;
 }
 label {font-size: 25px;}
-
 img {width: 80%;max-width: 690px;}
+noscript {margin-bottom: 500px;}
 
-#menu form button {width: 75%;max-width:400px;}
+#menu form button, #missions button {width: 75%;max-width:400px;}
 #menu form label, .header {background-color: white;border-radius: 10px;}
-#game button {width: 80%;max-width:500px;}
-#menu_alert {background-color:black;}
-#menu_alert a {color:blue;}
+#game button, #tasks li button {width: 80%;max-width:500px;}
+#tasks {list-style-type: none;
+  padding: 0; 
+  margin: 0;}
+.menu_msg {background-color:black;}
+.menu_msg a {color:blue;}
 #game-over {display:none;background-color:white;}
 .game {font-size: 55px;font-weight: bold;}
 .small {font-size: 40px;}
+.smaller {font-size: 30px;}
 .print {display: none;}
 
 @media only screen and (max-width: 600px) {
   img {width: 100%;}
   #game button {width: 85%;max-width:600px;}
-  input #a {width:100%;}
+  input#a {width:100%;}
+  #tasks li button {width:100%;height:60px;}
 }
