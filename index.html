@@ -31,7 +31,7 @@
  <link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
  
 </head>
-<body>
+<body oncontextmenu="return false;">
  <!-- Google Tag Manager (noscript) -->
  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-597B7WH"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -74,10 +74,10 @@
 <ul id="tasks">
 	<li><button class="task" id="plays">Play %0 games in total (%1 plays)</button></li>
 	<li><button class="task" id="earn_total">Earn %0 points in total (%1 earned)</button></li>
-		<li><button class="task" id="earn_game">Earn %0 points in a game (last %1 points)</button></li>
-		<li><button>Coming Soon...</button></li>
-		<li><button>Coming Soon...</button></li>
-		<li hidden><button class="task" id="dummy">dummy</button></li>
+  <li><button class="task" id="earn_game">Earn %0 points in a game (last %1 points)</button></li>
+	<li><button>Coming Soon...</button></li>
+	<li><button>Coming Soon...</button></li>
+	<li hidden><button>dummy</button></li>
 </ul><br />
 
 <button onclick="task_claim()">Claim Points</button><br />
@@ -114,7 +114,7 @@
       </tr>
      </tbody>
     </table>
-    <button onclick="type_num(10)">Clear</button><br />
+    <button onclick="type_num(10)">Clear Box</button><br />
     <button id="quit" data-pts="0" onclick="end_game(this.dataset.pts,false,true)">Quit Game</button>
    </section>
 
@@ -150,7 +150,7 @@
 
    <footer id="footer" class="noprint"><b><u>
      <p>
-      Game by <a href="https://github.com/McJoe21" target="_blank">McJoe21</a> • Version 0.4.1-d6
+      Game by <a href="https://github.com/McJoe21" target="_blank">McJoe21</a> • Version 0.4.1-Dev7
      </p>
      • <a href="javascript:openFullscreen();">Go Full Screen</a> • <a href="https://www.facebook.com/mathquizonline">Facebook</a> • <a href="https://mcJoe21.com/privacy.html">Your Data</a></u></b><br />
 

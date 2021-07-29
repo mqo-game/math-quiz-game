@@ -6,7 +6,7 @@ var u = {
  "plays": 0,
  "ver": "041-d5",
  "data":{"pts":{},"plays":{}},
- "tasks":{"count":0,"plays":[0,10,10],"earn_total":[0,50,25],"earn_game":[0,10,20]}
+ "tasks":{"count":0,"plays":[0,10,10],"earn_total":[0,50,25],"earn_game":[0,10,20],"dummy":0}
 };
 const stats = "%1 games played with %2 points in total!";
 const page = document.getElementsByClassName('page');
@@ -25,12 +25,12 @@ var endless_req = u.pts > 49 && u.plays > 9;
 if(endless_req){form.target[5].innerHTML = 'Target: Endless';form.target[5].disabled = false}
 
 const hours = new Date().getHours();
-const isDayTime = hours <= 6 && hours >= 19;
+const isDayTime = hours < 6 && hours > 19;
 
-if(isDayTime){document.body.style.backgroundImage = "url('images/night.jpg')";document.querySelector("#logo").classList.add("header");document.querySelector("footer").classList.add("header")}
+if(!isDayTime){document.body.style.backgroundImage = "url('images/night.jpg')";document.querySelector("#logo").classList.add("header");document.querySelector("footer").classList.add("header")}
 
 if('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/app.js');
+  navigator.serviceWorker.register('/app.js',{scope: location.pathname});
 };
 
 //start of functions
@@ -99,7 +99,7 @@ function task_info(){
 		alert(v.innerHTML);
 	});
 		
-		if(vals[i] <= u.tasks[v.id][1]){v.style.backgroundColor = "grey";passed[i] = false;}else{v.style.backgroundColor = "green";passed[i] = true}
+		if(vals[i] < u.tasks[v.id][1]){v.style.backgroundColor = "grey";passed[i] = false;console.info(u.tasks[v.id])}else{;console.info(u.tasks[v.id][1]);v.style.backgroundColor = "green";passed[i] = true}
 	}});
 }
 task_info();
@@ -109,12 +109,15 @@ function task_claim(){
 	tl.forEach((v,i) => {
 		if(passed[i]){
 			count++;
+      passed[i] = false;
 		}
 	});
 	document.querySelector("#task_count").innerHTML = count+" Points"
 }
 
+var lives
 function game() {
+  lives = 3;
   window.addEventListener("keypress",function(e){
     if(e.code = "Enter"){
       check()
@@ -189,12 +192,14 @@ function check() {
  } else {target = "Any"}
    
    document.getElementById("q").innerHTML = $q;
-   document.querySelector("#pts").innerHTML = $pts +"/"+form.target.value+ " Points";
+   document.querySelector("#pts").innerHTML = "#️⃣ "+$pts +"/"+form.target.value+ " ❤️"+lives;
    $a.value = "";
    document.querySelector("#quit").dataset.pts = $pts
    new_sum();
   } else if ($a.value != "") {
-   end_game($pts,false);
+    if(lives != 1){end_game($pts,false);}
+    lives -= 1
+    new_sum()
   }
  }
 }
