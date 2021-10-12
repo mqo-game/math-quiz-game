@@ -1,7 +1,5 @@
 {
-"name": "MQO Game",
-"short_name": "MQO Game",
-"theme_color": "#00ccff",
+"name": "MQO Game","short_name": "MQO Game","theme_color": "#00ccff",
 "background_color": "#000000",
 "display": "fullscreen",
 "start_url": "/?app_ver=041",

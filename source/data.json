@@ -1,0 +1,106 @@
+{
+	"guide": [
+  {
+    "text": [
+      "Explore what Math Quiz Online has to offer using this guide that will help you learn to play the game!",
+      "Need Support?"
+    ],
+    "title": "Guide Index"
+  },
+  {
+    "text": [
+      "Your game version is ",
+      "Look on our Facebook Page for the latest update news",
+      "This game was made by McJoe21 on GitHub and has other projects too!",
+      "",
+      "Before playing is recommended that you read the Gameplay tutorial first",
+      "Want to give feedback about this update?",
+      "Want to give feedback about this update?"
+    ],
+    "title": "About the Game"
+  },
+  {
+    "text": [
+      "First enter your name in the box",
+      "Choose the game difficulty and your score target",
+      "Answer the sum get points which shows under question counter",
+      "A wrong answer will lose you a life, you will have 3 lives",
+      "Higher difficulty is more points but harder questions",
+      "When game is over you can see your scores",
+      "You will get bonus points at the end based on your remaining lives",
+      "At night the game background will change to a night sky!"
+    ],
+    "title": "Gameplay"
+  },
+  {
+    "text": [
+      "The has missions as an extra long-term challenge when playing the game",
+      "The mission task will be shown on the card, telling what you have to complete",
+      "Each task will display what you need and what you have",
+      "Completed tasks will turn green to let you that you have done it"
+    ],
+    "title": "Missions/Tasks"
+  },
+  {
+    "text": [
+      "Endless mode is a special challenge that you can unlock by playing the game",
+      "To unlock you most have played 10 games and earn a total of 50 points!",
+      "The mode will keep going until your out of lives",
+      "Enjoy the challenge players!"
+    ],
+    "title": "Endless Mode"
+  },
+  {
+    "text": [
+      "This is where your game will always start and most important features",
+      "The home menu will show your game stats under the name box",
+      "The home menu is where you can choose the settings before you start your game"
+    ],
+    "title": "Home Menu"
+  },
+  {
+    "text": [
+      "You can email us on support@mcjoe21.com if you have any questions!",
+      "You can also message us on Facebook if you need anything!"
+    ],
+    "title": "Need Support?"
+  },
+  {
+    "text": [
+      "At any time you may quit the game",
+      "Quiting will lose your lives bonus but keep your earned points",
+      "But hoping you don't give up so easy whe you play lol"
+    ],
+    "title": "Quiting"
+  },
+  {
+    "text": [],
+    "title": "Feedback Hub"
+  },
+  {
+    "text": [
+      "The game will get a big update every so often that will improve it for the better, Here you can read about whats new and upcoming!"
+    ],
+    "title": "Game Updates!"
+  },
+  {
+    "text": [
+      "Added a new guide book to help new players learn about the game",
+      "Added new Missions to the game",
+      "New night background at night time",
+      "changed the menu to use emoji icons in selection",
+      "Added a new quit button to the game",
+      "New night game background"
+    ],
+    "title": "Latest Updates!"
+  },
+  {
+    "text": [
+      "Multiplayer features",
+      "Mission rewards"
+    ],
+    "title": "Planned Updates!"
+  }
+],
+ "update":{"version":"0.5.0 [BETA 1]","type":"beta"}
+}
