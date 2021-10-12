@@ -4,10 +4,10 @@ $(function () {
  $("#v").html(ver);
 });
 //useful global functions
-let r = function(n,o){return Math.floor(Math.rdom()*o)+n}, n=function(n){return Number(n)}, fv=function(n){return $("#menu_form").children(`#${ n }`).val()}, ss = function(n,o=null){return null!=o&&(sessionStorage[n]=o),sessionStorage[n]}, ls = function(n,o=null){return null!=o&&(localStorage[n]=o),localStorage[n]}, msgBox = function(n,o){$("#modalTitle").html(n),$("#modalBody").html(o),$("#01").show()}
+function ran(n,o){return Math.floor(Math.random()*o)+n}function n(n){return Number(n)}function fv(n){return $("#menu_form").children(`#${ n }`).val()}function ss(n,o=null){return null!=o&&(sessionStorage[n]=o),sessionStorage[n]}function ls(n,o=null){return null!=o&&(localStorage[n]=o),localStorage[n]}function msgBox(n,o){$("#modalTitle").html(n),$("#modalBody").html(o),$("#01").show()}
 //set variables
-let u = {dataver:1,name:"Player123",pts:[0,0,0],plays:0,lives:0,ver:"0.5 [BETA 1]",tasks:{count:0,first_game:[0,1,0],plays:[0,10,10],earn_total:[0,200,100],earn_game:[0,25,50],save_lives:[0,30,30]}};
-let ver = "0.5 [BETA 1]",
+var u = {dataver:1,name:"Player123",pts:[0,0,0],plays:0,lives:0,ver:"0.5 [BETA 1]",tasks:{count:0,first_game:[0,1,0],plays:[0,10,10],earn_total:[0,200,100],earn_game:[0,25,50],save_lives:[0,30,0]}};
+var ver = "0.5 [BETA 1]",
  form = $("form");
 //user data checks
 u.pts[0] = n(u.pts[0]);
@@ -175,7 +175,7 @@ function type_num(num) {
 }
 function func() {
  return "xxxx-4xxx-xxxx-yxxx".replace(/[xy]/g, function (c) {
-  var rnd = (Math.rdom() * 16) | 0,
+  var rnd = (Math.random() * 16) | 0,
    v = c === "x" ? rnd : (rnd & 0x3) | 0x8;
   return v.toString(16);
  });
@@ -184,16 +184,16 @@ var st = func();
 function gs() {
  let _0 = n(fv("diff")) * 9;
  let _1 = {
-  vals: [r(1, _0), r(1, _0)],
+  vals: [ran(1, _0), ran(1, _0)],
  };
  let _2 = n(fv("diff"));
 
  if (_2 == 1) {
   _1.type = 1;
  } else if (_2 <= 3) {
-  _1.type = r(1, 2);
+  _1.type = ran(1, 2);
  } else if (_2 <= 5) {
-  _1.type = r(1, 3);
+  _1.type = ran(1, 3);
  }
  switch (_1.type) {
   case 1:
@@ -202,7 +202,7 @@ function gs() {
    break;
   case 2:
    while (_1.vals[1] > _1.vals[0]) {
-    _1.vals = [r(1, _0), r(1, _0)];
+    _1.vals = [ran(1, _0), ran(1, _0)];
    }
    _1.ans = _1.vals[0] - _1.vals[1];
    _1.vals[2] = "-";
@@ -280,5 +280,7 @@ let about = $(".about"),
   }
  };
 about.each(function (i) {
- $(this).attr("ignore") || $("#index").append(`<li><span><a onclick='aP(${i})'>${$(this).attr("title")}</a></span></li>`);
+ if (!$(this).attr("ignore")) {
+  $("#index").append(`<li><span><a onclick='aP(${i})'>${$(this).attr("title")}</a></span></li>`);
+ }
 });

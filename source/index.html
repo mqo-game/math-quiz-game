@@ -28,7 +28,7 @@ content="A free-to-play online math quiz game made for schools before covid-19, 
 <script>
 (window.jQuery || document.write('<script charset="utf-8" src="js/jquery.js"><\/script>'));
 </script>
-<script src="js/script.min.js" defer charset="utf-8"></script>
+<script src="js/script.js" defer charset="utf-8"></script>
 <style media="print">
 .noprint {display: none;}.print {display: block;}
 </style>
@@ -138,7 +138,7 @@ Game not loading? Check you have JavaScript enabled your browser.
 </tbody>
 </table>
 <button onclick="type_num(10)">Clear Box</button><br />
-<button id="quit" onclick="eg(this.attr('pts'),false)">Quit Game</button>
+<button id="quit" onclick="eg($(this).attr('pts'),false)">Quit Game</button>
 </div>
 </div>
 
