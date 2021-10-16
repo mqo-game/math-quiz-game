@@ -36,8 +36,8 @@ content="A free-to-play online math quiz game made for schools before covid-19, 
 
 <body oncontextmenu="return false;" ondragstart="return false;">
 <!-- Google Tag Manager (noscript) -->
-<!--<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-597B7WH"
-height="0" width="0" style="visibility:hidden"></iframe></noscript>-->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-597B7WH"
+height="0" width="0" style="visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <center>
 <div id="01" class="modal">
@@ -66,7 +66,7 @@ Game not loading? Check you have JavaScript enabled your browser.
 <label for="name">Enter Your Name</label><br />
 <input id="name" type="text" autocomplete="name" pattern="[A-Za-z][1-9]{30}" required>
 <br />
-<label id="stats">Loading stats...</label>
+<label id="stats"></label>
 <br /><br />
 <label>Pick Game Settings</label><br />
 <select id="diff">
@@ -103,7 +103,7 @@ Game not loading? Check you have JavaScript enabled your browser.
 <li><button class="task" id="save_lives">Save a total of %0 lives in games (%1 saved)</button></li>
 </ul>
 <br />
-<button onclick="task_claim()">Claim Points</button><br />
+<button id="task_claim">Claim Tasks</button><br />
 <button onclick="pages(1)">Home Menu</button>
 </div>
 
@@ -174,8 +174,8 @@ the game!</li>
 <div class="about" title="About the Game">
 <h3>About the Game</h3>
 <ul>
-<li>Your game version is <span id="v"></span></li>
-<li><br /></li>
+<li>The game version is <ver></ver></li>
+<br>
 <li>Look on our <a target="_blank" href="https://facebook.com/mathquizonline">Facebook Page</a>
 for the latest update news</li>
 <li>This game was made by <a target="_blank" href="https://github.com/McJoe21">McJoe21 on
@@ -183,7 +183,7 @@ GitHub</a> and has other projects too!</li>
 <li><br /></li>
 <li>Before playing is recommended that you read the <a onclick="aP(2)">Gameplay</a>
 tutorial first</li>
-<li>Wnt to <a onclick="aP(8)">give feedback</a> about this update?</li>
+<li>Want to <a onclick="aP(8)">give feedback</a> about this update?</li>
 </ul>
 </div>
 
@@ -195,6 +195,7 @@ tutorial first</li>
 <li>Answer the sum get points which shows under question counter</li>
 <li>A wrong answer will lose you a life, you will have 3 lives</li>
 <li>Higher difficulty is more points but harder questions</li>
+<li>And can also get a highscore</li>
 <li>When game is over you can see your scores</li>
 <li>You will get bonus points at the end based on your remaining lives</li>
 <li>At night the game background will change to a night sky!</li>
@@ -217,6 +218,7 @@ game</a></li>
 <li>To unlock you most have played 10 games and earn a total of 50 points!</li>
 <li>The mode will keep going until your out of lives</li>
 <li>Enjoy the challenge players!</li>
+<li>Best way of getting a bigger high score</li>
 </ul>
 </div>
 
@@ -230,7 +232,7 @@ onclick="aP(1)">start your game</a></li>
 </ul>
 </div>
 <div class="about" title="Need Support?" ignore="true">
-<h3>Need Suport?</h3>
+<h3>Need Support?</h3>
 <ul>
 <li>You can email us on support@mcjoe21.com if you have any questions!</li>
 <li>You can also message us on <a target="_blank"
@@ -242,7 +244,7 @@ href="https://m.me/mathquizonline">Facebook</a> if you need anything!</li>
 <ul>
 <li>At any time you may quit the game</li>
 <li>Quiting will lose your lives bonus but keep your earned points</li>
-<li>But hoping you don't give up so easy whe you play lol</li>
+<li>But hoping you don't give up so easy when you play lol</li>
 </ul>
 </div>
 <div class="about" title="Feedback Hub">
@@ -265,12 +267,13 @@ can read about whats new and upcoming!</li>
 <h3>Latest Updates!</h3>
 <ul>
 <li>Added a new guide book to help new players learn about the game</li>
-<li>Added new <a onclick="aP(3)">Missions</a> to the game</li>
+<li>Added new highscore saving</li>
+<li>Addes new <a onclick="aP(3)">Missions</a> to the game</li>
 <li>New night background at night time</li>
-<li>changed the <a onclick="aP(2)">menu</a> to use emoji icons in selection</li>
+<li>Changed the <a onclick="aP(2)">menu</a> to use emoji icons in selection drop-downs</li>
 <li>Added a new <a onclick="aP(7)">quit</a> button to the game</li>
-<li>New night game background</li>
 </ul>
+<li>Now using jQuery!</li>
 </div>
 <div class="about" title="Planned Updates!" ignore="true">
 <h3>Planned Updates!</h3>
@@ -286,7 +289,7 @@ can read about whats new and upcoming!</li>
 <button onclick="pages(1);return false;">Goto Menu</button><br>
 </form>
 </div>
-<!--<script type="text/javascript" src="https://www.usersonline.org/uo-35xaW8z4y5A92y4y-13-1.js"></script>-->
+<script type="text/javascript" src="https://www.usersonline.org/uo-35xaW8z4y5A92y4y-13-1.js"></script>
 </center>
 </body>
 

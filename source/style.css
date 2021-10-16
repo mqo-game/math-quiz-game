@@ -57,9 +57,11 @@ button:hover {
 td {
     width: 80px
 }
+
 h4 {
     color: blue
 }
+
 label, h2, h3 {
     font-weight: bold;
     color: red
@@ -69,6 +71,7 @@ label {
     font-size: 25px;
     max-width: 82%
 }
+
 img {
     width: 75%;
     max-width: 650px
@@ -78,9 +81,11 @@ a {
     text-decoration: none;
     color: blue
 }
+
 a:hover {
     background-color: grey
 }
+
 a[href] {
     color: red
 }
@@ -112,7 +117,11 @@ ul {
 #game button, #tasks li button {
     max-width: 500px
 }
-#endText {font-size:22.5px;}
+
+#endText {
+    font-size: 24px;
+}
+
 #about {
     border-style: solid;
     border-width: 5px;
@@ -135,8 +144,9 @@ ul {
 .task {
     width: 90%;
     height: 60px;
-    background-color:blueviolet;
+    background-color: blueviolet;
 }
+
 .page, .about {
     display: none
 }
@@ -184,36 +194,76 @@ ul {
     font-size: 22px;
     font-family: 'Ranchers', Sans-Serif, Courier, Lucida, monospace
 }
-      .spin {
-        display: inline-block;
-        width: 100px;
-        height: 100px;
-        border: 3px solid rgba(255, 255, 255, .3);
-        border-radius: 50%;
-        border-top-color: #fff;
-        animation: spin 0.5s ease-in-out infinite;
-        -webkit-animation: spin 0.5s ease-in-out infinite;
-      }
-      @keyframes spin {
-        to {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-        }
-      }
-      @-webkit-keyframes spin {
-        to {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-        }
-      }
-.modal * {font-family: Sans-Serif}
-.modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
-.modal-content{margin:auto;background-color:#fff;position:relative;padding:0;outline:0;width:500px}
-.modal-container{padding:0.01em 16px}
-.top-right {position:absolute;right:0;top:0;color:white}
+
+.spin {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    border: 3px solid rgba(255, 255, 255, .3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.5s ease-in-out infinite;
+    -webkit-animation: spin 0.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.modal * {
+    font-family: Sans-Serif
+}
+
+.modal {
+    z-index: 3;
+    display: none;
+    padding-top: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4)
+}
+
+.modal-content {
+    margin: auto;
+    background-color: #fff;
+    position: relative;
+    padding: 0;
+    outline: 0;
+    width: 500px
+}
+
+.modal-container {
+    padding: 0.01em 16px
+}
+
+.top-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white
+}
+
 @media only screen and (max-width:500px) {
+    #endText {
+        font-size: 22px;
+    }
     img, .modal-content {
-        width: 100%
+        width: 90%
     }
     input, select {
         font-size: 20px

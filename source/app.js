@@ -1,35 +1,24 @@
-const toCache = [
-  'css/main.css',
-  'css/page.css',
-  'index.html',
-  'images/clouds.png',
-  'images/night.jpg',
-  'images/logo.png',
-  'icons/32x32.png',
-  'icons/192x192.png',
-  'icons/512x512.png',
-  'icons/favicon.ico',
-  'https://fonts.googleapis.com/css2?family=Ranchers&display=swap'
- ], cacheName = "math-quiz-v050-b1";
+let toCache = ["style.css", "js/jquery.js", "js/script.js", "index.html","feedback.html", "images/clouds.png", "images/night.jpg", "images/logo.png", "icons/32x32.png", "icons/192x192.png", "icons/512x512.png", "icons/favicon.ico", "https://fonts.googleapis.com/css2?family=Ranchers&display=swap"], cacheName = "mqo-game-0242ac130003"; 
 
- self.addEventListener('install', (e) => {
-  e.waitUntil((async () => {
-    const cache = await caches.open(cacheName);
-    await cache.addAll(toCache);
-  })());
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(cacheName).then((cache) => {
+      return cache.addAll(toCache);
+    })
+  );
 });
 
-self.addEventListener('beforeinstallprompt', (e) => {});
+self.addEventListener('activate', event => {});
 
-self.addEventListener('activate', () => {});
-
-self.addEventListener('fetch', (e) => {
-  e.respondWith((async () => {
-    const r = await caches.match(e.request);
-    if (r) { return r; }
-    const response = await fetch(e.request);
-    const cache = await caches.open(cacheName);
-    cache.put(e.request, response.clone());
-    return response;
-  })());
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((resp) => {
+      return resp || fetch(event.request).then((response) => {
+        return caches.open('v1').then((cache) => {
+          cache.put(event.request, response.clone());
+          return response;
+        });
+      });
+    })
+  );
 });

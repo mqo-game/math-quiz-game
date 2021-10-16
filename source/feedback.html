@@ -1,10 +1,32 @@
-<!doctype html>
-
-	<head>
-		<meta http-equiv=content-type content="text/html; charset=utf-8">
-	</head>
-	<body oncontextmenu=return!1>
-<iframe style=position:fixed;top:0;bottom:0;right:0;width:100%;border:none;margin:0;padding:0;overflow:hidden;z-index:999999;height:100%>
-Loading Content...</iframe>
-<script>let url=new URLSearchParams(window.location.search);1==url.get("load")?document.querySelector("iframe").src="https://docs.google.com/forms/d/e/1FAIpQLSciES5MxR2i9X2EzwMcG53H3LhrIkanSV2JczZcTt1wWpwmNQ/viewform?usp=pp_url":document.querySelector("iframe").src=""</script>
-	
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<body oncontextmenu="return false;">
+    <iframe
+        title="feedback"
+        style="
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        width: 100%;
+        border: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        z-index: 999999;
+        height: 100%;
+        ">
+        Loading Content...</iframe>
+    <script>
+        let url = new URLSearchParams(window.location.search);
+        if (url.get('load') == 1) {
+            document.querySelector('iframe').src = 'https://docs.google.com/forms/d/e/1FAIpQLSciES5MxR2i9X2EzwMcG53H3LhrIkanSV2JczZcTt1wWpwmNQ/viewform?usp=pp_url';
+        } else {
+            document.querySelector('iframe').src = ""
+        }
+    </script>
+</body>
+</html>
