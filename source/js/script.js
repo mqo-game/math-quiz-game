@@ -6,24 +6,24 @@ $(function(){
 //useful global functions
 function ran(n,o){return Math.floor(Math.random()*o)+n}function n(n){return Number(n)}function fv(n){return $("#menu_form").children(`#${ n }`).val()}function ss(n,o=null){return null!=o&&(sessionStorage[n]=o),sessionStorage[n]}function ls(n,o=null){return null!=o&&(localStorage[n]=o),localStorage[n]}function msgBox(n,o){$("#modalTitle").html(n),$("#modalBody").html(o),$("#01").show()}
 //set variables
-var u = {dataver:1,name:"Player123",pts:[0,0,0],plays:0,lives:0,ver:"0.5 [BETA 2]",tasks:{count:0,first_game:[0,1,0],plays:[0,10,10],earn_total:[0,200,100],earn_game:[0,25,50],save_lives:[0,30,0]}};
-let ver = "0.5 [BETA 1]",
+var u = {dataver:1,name:"Player123",pts:[0,0,0],plays:0,lives:0,ver:"0.5 [BETA 3]",tasks:{count:0,first_game:[0,1,0,1],plays:[0,10,10],earn_total:[0,200,100],earn_game:[0,25,50],save_lives:[0,30,0]}};
+let ver = "0.5 [BETA 3]",
  form = $("form");
 //user data checks
 u.date = new Date().toDateString();
 if (!ls("mqo-user")){
- ls("mqo-user", JSON.stringify(u));
+ ls("mqo-user", btoa(JSON.stringify(u)));
 } else {
- u = JSON.parse(ls("mqo-user"));
+ u = JSON.parse(atob(ls("mqo-user")));
  u.date = new Date().toDateString();
  if (u.ver != ver){
-u.ver=ver;u.tasks={count:0,first_game:[0,1,0],plays:[0,10,10],earn_total:[0,200,100],earn_game:[0,25,50],save_lives:[0,30,0]};u.pts=[u.pts||0,u.pts2||0,0];u.lives=0;u.dataver=1;
+u.ver=ver;u.tasks={count:0,first_game:[0,1,0,1],plays:[0,10,10],earn_total:[0,200,100],earn_game:[0,25,50],save_lives:[0,30,0]};u.pts=[u.pts||0,u.pts2||0,0];u.lives=0;u.dataver=1;
  }
 }
 if(!u.popup){
  msgBox("Dear User","This is a beta test version of the game for you to try out!,<br><br>There may be bugs and uncompleted features");
  u.popup=true;
- ls("mqo-user", JSON.stringify(u));
+ ls("mqo-user", btoa(JSON.stringify(u)));
 }
 if (u.pts[0] > 49 && u.plays > 9){
  form.children("#target")[0].html("🎯 Endless");
@@ -31,7 +31,7 @@ if (u.pts[0] > 49 && u.plays > 9){
 }
 if (new Date().getHours() >= 19){
  $("body").css("background-image", "url('images/night.jpg')");
- $("#logo").addClass("header");
+ $("#logo").addClass("tag");
 }
 if('serviceWorker' in navigator){
     navigator.serviceWorker.register('/app.js',{scope: location.pathname});
@@ -41,9 +41,9 @@ function eg(pts, pass){
  uhs();
  u.plays++;
  u.pts[0] += n(pts);
- u.pts[1] = u.pts[0];
+ u.pts[1] = n(pts);
  u.lives += lives;
- ls("mqo-user", JSON.stringify(u));
+ ls("mqo-user", btoa(JSON.stringify(u)));
  pages(4);
  $("#a").val("");
  ti();
@@ -52,14 +52,14 @@ function eg(pts, pass){
   endTitle = $("#endTitle");
  function etf(){
   if (pass){
-   endTitle = "You Win!";
+   endTitle.text("You Win!");
    return "completed your challenge at";
   } else {
    if (!pass){
-    endTitle = "You Quit!";
+    endTitle.text("You Quit!");
     return "quit but you did last until";
    } else {
-    endTitle = "You Lose!";
+    endTitle.text("You Lose!");
     return "losed but you did last until";
    }
   }
@@ -73,7 +73,7 @@ function eg(pts, pass){
  }
  function nh(){
   if (u.pts[2] < pts){
-   u.pts[2] = lp()+pts;
+   u.pts[2] = lp()+n(pts);
    return `New highscore of <span class='grey-bg'>${u.pts[2]}</span> points!`;
   }
   return `Highscore is <span class='grey-bg'>${u.pts[2]}</span> points!`;
@@ -100,16 +100,15 @@ function uhs(){
 uhs();
 //game functions
 $("#start").click(function(){
- $("#a").val("");
  let name = fv("name");
  if (name != ""){
   let nl = name.length;
   if (nl < 30 && nl > 1){
    if (fv("target") != isNaN){
-    ss("_1", fv("_1"));
     u.name = name;
     u.plays += 1;
     $("#a").val("");
+    $("#quit").attr("pts",0)
     game();
    }
   } else {
@@ -145,18 +144,16 @@ ti();
 //claim button
 $("#task_claim").click(function(){
  tl.each(function(i){
-  if (passed[i] && !this.done){
+  if (passed[i]){
+   t = u.tasks[this.id];
+   if(t[0]!=t[3]){
    passed[i] = false;
    u.tasks.count++;
-   t = u.tasks[this.id];
    t[0]++;t[1] = (t[2] * t[0])+1;
-   if(this.id == "first_game"){
-     this.done = true;
-   }
-  }
+  }}
  });
   ti();
-  ls("mqo-user", JSON.stringify(u));
+  ls("mqo-user", btoa(JSON.stringify(u)));
  $("#task_count").text(`${u.tasks.count} Points`);
 })
 let lives;
@@ -246,7 +243,7 @@ $("#check").click(function(){
    }
    $("#q").text($q);
    a.val("");
-   $("#quit").pts = $pts;
+   $("#quit").attr("pts",$pts);
    ns();
   } else {
    if (lives == 1){
@@ -258,6 +255,9 @@ $("#check").click(function(){
   }
  }
  ns();
+});
+$(document).keydown(function(e){ 
+  if(e.key == /[1-9]/){type_num(e.key)}
 });
 //page switcher
 function pages(pg){

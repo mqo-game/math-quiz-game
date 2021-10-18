@@ -2,7 +2,7 @@ input, select {
     width: 85%;
     padding: 2px;
     font-size: 25px;
-    font-family: 'Ranchers', Sans-Serif, Courier, Lucida, monospace;
+    font-family: 'Ranchers', Arial, Courier, Lucida, monospace;
     border-width: 2px;
     border-color: rgb(97, 93, 93);
     color: #000;
@@ -104,10 +104,12 @@ ul {
     max-width: 350px
 }
 
-#menu form label, .header {
+#menu form label, .tag {
     background-color: white;
     border-radius: 10px;
-    color: red
+    color: red;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #menu form label {
@@ -175,7 +177,7 @@ ul {
 
 .game {
     font-size: 60px;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .small {

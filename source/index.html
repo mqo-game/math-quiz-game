@@ -56,7 +56,7 @@ height="0" width="0" style="visibility:hidden"></iframe></noscript>
 <img id="logo" src="images/logo.png" alt="math quiz online logo">
 <div id="loading" class="page" style="display:block">
 <div class="spin"></div>
-<p class="header black-bg">
+<p class="tag black-bg">
 Game not loading? Check you have JavaScript enabled your browser.
 </p>
 </div>
@@ -93,8 +93,8 @@ Game not loading? Check you have JavaScript enabled your browser.
 </div>
 
 <div id="missions" class="page">
-<label class="header small">Missions</label><br />
-<label class="header game smaller" id="task_count">0 Points</label><br /><br />
+<label class="tag small">Missions</label><br />
+<label class="tag game smaller" id="task_count">0 Points</label><br /><br />
 <ul id="tasks">
 <li><button class="task" id="first_game">Play at least %0 game (%1 plays)</button></li>
 <li><button class="task" id="plays">Play %0 games in total (%1 plays)</button></li>
@@ -109,14 +109,12 @@ Game not loading? Check you have JavaScript enabled your browser.
 
 <div id="game" class="page">
 <br>
-<form>
-<label style="color: red;" class="header game question">Question <t id="q"></t>
+<label style="color: red;" class="tag game question">Question <t id="q"></t>
 </label>
 <br>
-<label id="pts" style="color: red;" class="header game smaller"></label><br><br>
-<label id="sum" style="color:white;" class="game"></label><br /><br>
+<label id="pts" style="color: red;" class="tag game small"></label><br><br>
+<label id="sum" style="color:white;" class="tag game black-bg"></label><br /><br>
 <input id="a" name="a" type="text" disabled>
-</form>
 <div id="keypad">
 <button id="check">Check Answer</button>
 <table align="center">
@@ -138,7 +136,7 @@ Game not loading? Check you have JavaScript enabled your browser.
 </tbody>
 </table>
 <button onclick="type_num(10)">Clear Box</button><br />
-<button id="quit" onclick="eg($(this).attr('pts'),false)">Quit Game</button>
+<button id="quit" onclick="eg(this.pts,false)">Quit Game</button>
 </div>
 </div>
 
