@@ -11,7 +11,8 @@ input, select {
     background-color: white;
     box-shadow: 0 0 5px rgba(66, 66, 66, .75);
     text-align: center;
-    height: 40px
+    height: 40px;
+    -webkit-appearance: none;
 }
 
 body {
@@ -46,7 +47,8 @@ button {
     font-weight: bold;
     font-family: Sans-Serif;
     background-color: #e67316;
-    border-radius: 6px
+    border-radius: 6px;
+        -webkit-appearance: none;
 }
 
 button:hover {
@@ -97,7 +99,8 @@ ul {
 }
 
 #a {
-    max-width: 500px
+    max-width: 500px;
+    -webkit-appearance: none;
 }
 
 #menu form button, #missions button, #about button {
@@ -108,8 +111,8 @@ ul {
     background-color: white;
     border-radius: 10px;
     color: red;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #menu form label {
@@ -121,7 +124,7 @@ ul {
 }
 
 #endText {
-    font-size: 24px;
+    font-size: 32px;
 }
 
 #about {

@@ -1,4 +1,4 @@
-let toCache = ["style.css", "js/jquery.js", "js/script.js", "index.html","feedback.html", "images/clouds.png", "images/night.jpg", "images/logo.png", "icons/32x32.png", "icons/192x192.png", "icons/512x512.png", "icons/favicon.ico", "https://fonts.googleapis.com/css2?family=Ranchers&display=swap"], cacheName = "mqo-game-0242ac130003"; 
+let toCache = ["style.css", "js/jquery.js", "js/script.js", "index.html","feedback.html", "images/clouds.png", "images/night.jpg", "images/logo.png", "icons/32x32.png", "icons/192x192.png", "icons/512x512.png", "icons/favicon.ico", "https://fonts.googleapis.com/css2?family=Ranchers&display=swap"], cacheName = "mqo-game-v0.5.0-b3"; 
 
 self.addEventListener('install', (event) => {
   event.waitUntil(

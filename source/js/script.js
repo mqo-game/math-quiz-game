@@ -6,15 +6,20 @@ $(function(){
 //useful global functions
 function ran(n,o){return Math.floor(Math.random()*o)+n}function n(n){return Number(n)}function fv(n){return $("#menu_form").children(`#${ n }`).val()}function ss(n,o=null){return null!=o&&(sessionStorage[n]=o),sessionStorage[n]}function ls(n,o=null){return null!=o&&(localStorage[n]=o),localStorage[n]}function msgBox(n,o){$("#modalTitle").html(n),$("#modalBody").html(o),$("#01").show()}
 //set variables
-var u = {dataver:1,name:"Player123",pts:[0,0,0],plays:0,lives:0,ver:"0.5 [BETA 3]",tasks:{count:0,first_game:[0,1,0,1],plays:[0,10,10],earn_total:[0,200,100],earn_game:[0,25,50],save_lives:[0,30,0]}};
-let ver = "0.5 [BETA 3]",
- form = $("form");
+var u = {dataver:1,name:"Player123",pts:[0,0,0],plays:0,lives:0,ver:"0.5 [BETA 4]",tasks:{count:0,first_game:[0,1,0,1],plays:[0,10,10],earn_total:[0,200,100],earn_game:[0,25,50],save_lives:[0,30,0]}}, ver = "0.5 [BETA 4]",
+ form = $("form"),
+ share = `<p>Do you want to help us grow bigger by getting involved in the community conservation on <a href="https://facebook.com/MathQuizOnline">Facebook</a> or <a href="https://m.me/MathQuizOnline">Message Us</a> if you have questions</p>
+  <div>
+ <center>
+     <a href="https://facebook.com/MathQuizOnline/"><img src="icons/like.png" style="width: 128px" alt="Like us on Facebook"></a>
+     </center>
+  </div>`;
 //user data checks
 u.date = new Date().toDateString();
 if (!ls("mqo-user")){
- ls("mqo-user", btoa(JSON.stringify(u)));
+ ls("mqo-user", JSON.stringify(u));
 } else {
- u = JSON.parse(atob(ls("mqo-user")));
+ u = JSON.parse(ls("mqo-user"));
  u.date = new Date().toDateString();
  if (u.ver != ver){
 u.ver=ver;u.tasks={count:0,first_game:[0,1,0,1],plays:[0,10,10],earn_total:[0,200,100],earn_game:[0,25,50],save_lives:[0,30,0]};u.pts=[u.pts||0,u.pts2||0,0];u.lives=0;u.dataver=1;
@@ -23,8 +28,9 @@ u.ver=ver;u.tasks={count:0,first_game:[0,1,0,1],plays:[0,10,10],earn_total:[0,20
 if(!u.popup){
  msgBox("Dear User","This is a beta test version of the game for you to try out!,<br><br>There may be bugs and uncompleted features");
  u.popup=true;
- ls("mqo-user", btoa(JSON.stringify(u)));
+ ls("mqo-user", JSON.stringify(u));
 }
+msgBox("Dear Players",share);
 if (u.pts[0] > 49 && u.plays > 9){
  form.children("#target")[0].html("🎯 Endless");
  form.children("#target")[5].disabled = false;
@@ -38,14 +44,14 @@ if('serviceWorker' in navigator){
   }
 //start of functions
 function eg(pts, pass){
- uhs();
  u.plays++;
  u.pts[0] += n(pts);
  u.pts[1] = n(pts);
  u.lives += lives;
- ls("mqo-user", btoa(JSON.stringify(u)));
+ ls("mqo-user", JSON.stringify(u));
  pages(4);
  $("#a").val("");
+ uhs();
  ti();
  //fills in end screen
  let endText = $("#endText"),
@@ -72,7 +78,7 @@ function eg(pts, pass){
   }
  }
  function nh(){
-  if (u.pts[2] < pts){
+  if (u.pts[2] > pts){
    u.pts[2] = lp()+n(pts);
    return `New highscore of <span class='grey-bg'>${u.pts[2]}</span> points!`;
   }
@@ -100,6 +106,7 @@ function uhs(){
 uhs();
 //game functions
 $("#start").click(function(){
+ $("#a").val("");
  let name = fv("name");
  if (name != ""){
   let nl = name.length;
@@ -108,7 +115,6 @@ $("#start").click(function(){
     u.name = name;
     u.plays += 1;
     $("#a").val("");
-    $("#quit").attr("pts",0)
     game();
    }
   } else {
@@ -151,9 +157,9 @@ $("#task_claim").click(function(){
    u.tasks.count++;
    t[0]++;t[1] = (t[2] * t[0])+1;
   }}
- });
+ });;
   ti();
-  ls("mqo-user", btoa(JSON.stringify(u)));
+  ls("mqo-user", JSON.stringify(u));
  $("#task_count").text(`${u.tasks.count} Points`);
 })
 let lives;
@@ -239,25 +245,21 @@ $("#check").click(function(){
     target = "any";
    }
    if ($q >= 10){
-    $(".question").css("font-size", "45px");
+    $(".question").c
+    ss("font-size", "45px");
    }
    $("#q").text($q);
    a.val("");
-   $("#quit").attr("pts",$pts);
-   ns();
+   $("#quit").attr(pts,$pts);
   } else {
    if (lives == 1){
     eg($pts, false);
    }
    lives -= 1;
    a.css("background-color", "red");
-   ns();
   }
+  ns();
  }
- ns();
-});
-$(document).keydown(function(e){ 
-  if(e.key == /[1-9]/){type_num(e.key)}
 });
 //page switcher
 function pages(pg){
@@ -285,7 +287,7 @@ let about = $(".about"),
   }
  };
 about.each(function(i){
- if (!this.ignore){
-  $("#index").append(`<li><span><a onclick='aP(${i})'>${this.title}</a></span></li>`);
+ if (!$(this).data("ignore")){
+  $("#index").append(`<li><span><a title="Page ${i}" onclick='aP(${i})'>${this.title}</a></span></li>`);
  }
 });
