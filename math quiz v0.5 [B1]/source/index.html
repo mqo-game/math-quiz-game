@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>
+(function(w, d, s, l, i) {
+w[l] = w[l] || []; w[l].push({
+'gtm.start':
+new Date().getTime(), event: 'gtm.js'
+}); var f = d.getElementsByTagName(s)[0],
+j = d.createElement(s), dl = l != 'dataLayer'?'&l='+l: ''; j.async = true; j.src =
+'https://www.googletagmanager.com/gtm.js?id='+i+dl; f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-597B7WH');
+</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Math Quiz Online (Beta) - Free Math Quiz Game</title>
+<link rel="manifest" href="site.webmanifest">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+<link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon" />
+<meta name="description"
+content="A free-to-play online math quiz game made for schools before covid-19, now updated with an in-game guide and missions! Safe to play in schools (with no login needed) and fun background to keep kids interested and learn something too.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+(window.jQuery || document.write('<script charset="utf-8" src="js/jquery.js"><\/script>'));
+</script>
+<script src="js/script.js" defer charset="utf-8"></script>
+<style media="print">
+.noprint {display: none;}.print {display: block;}
+</style>
+</head>
+
+<body oncontextmenu="return false;" ondragstart="return false;">
+<!-- Google Tag Manager (noscript) -->
+<!--<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-597B7WH"
+height="0" width="0" style="visibility:hidden"></iframe></noscript>-->
+<!-- End Google Tag Manager (noscript) -->
+<center>
+<div id="01" class="modal">
+<div class="modal-content">
+<header class="modal-container black-bg">
+<span onclick="$('#01').hide()" class="top-right" style="font-size:25px">&times;</span>
+<h3 style="color: white;" id="modalTitle"></h3>
+</header>
+
+<div class="modal-container">
+<p id="modalBody"></p>
+</div>
+</div>
+</div>
+
+<img id="logo" src="images/logo.png" alt="math quiz online logo">
+<div id="loading" class="page" style="display:block">
+<div class="spin"></div>
+<p class="header black-bg">
+Game not loading? Check you have JavaScript enabled your browser.
+</p>
+</div>
+
+<div id="menu" class="page">
+<form id="menu_form">
+<label for="name">Enter Your Name</label><br />
+<input id="name" type="text" autocomplete="name" pattern="[A-Za-z][1-9]{30}" required>
+<br />
+<label id="stats">Loading stats...</label>
+<br /><br />
+<label>Pick Game Settings</label><br />
+<select id="diff">
+<option value="1">❗️ Extra-Easy (1-10)</option>
+<option value="2">❗️ Easy (11-20)</option>
+<option value="3">❗️ Normal (21-30)</option>
+<option value="4">❗️ Hard (31-40)</option>
+<option value="5">❗️ Extra-Hard (41-50)</option>
+</select>
+<br /><br />
+<select id="target">
+<option value="20">🎯 20 Points</option>
+<option value="40">🎯 40 Points</option>
+<option value="60">🎯 60 Points</option>
+<option value="80">🎯 80 Points</option>
+<option value="100">🎯 100 Points</option>
+<option value="any" disabled>🎯 Endless 🔐</option>
+</select>
+<br /><br />
+<button id="start">🎮 Start Quiz</button>
+<button onclick="pages(2)">🏁 Missions</button>
+<button onclick="pages(5)">📓 Guide</button>
+</form>
+</div>
+
+<div id="missions" class="page">
+<label class="header small">Missions</label><br />
+<label class="header game smaller" id="task_count">0 Points</label><br /><br />
+<ul id="tasks">
+<li><button class="task" id="first_game">Play at least %0 game (%1 plays)</button></li>
+<li><button class="task" id="plays">Play %0 games in total (%1 plays)</button></li>
+<li><button class="task" id="earn_total">Earn %0 points in total (%1 earned)</button></li>
+<li><button class="task" id="earn_game">Earn %0 points in a game (last %1 points)</button></li>
+<li><button class="task" id="save_lives">Save a total of %0 lives in games (%1 saved)</button></li>
+</ul>
+<br />
+<button onclick="task_claim()">Claim Points</button><br />
+<button onclick="pages(1)">Home Menu</button>
+</div>
+
+<div id="game" class="page">
+<br>
+<form>
+<label style="color: red;" class="header game question">Question <t id="q"></t>
+</label>
+<br>
+<label id="pts" style="color: red;" class="header game smaller"></label><br><br>
+<label id="sum" style="color:white;" class="game"></label><br /><br>
+<input id="a" name="a" type="text" disabled>
+</form>
+<div id="keypad">
+<button id="check">Check Answer</button>
+<table align="center">
+<tbody>
+<tr>
+<td><button onclick="type_num(1)">1</button></td>
+<td><button onclick="type_num(2)">2</button></td>
+<td><button onclick="type_num(3)">3</button></td>
+<td><button onclick="type_num(4)">4</button></td>
+<td><button onclick="type_num(5)">5</button></td>
+</tr>
+<tr>
+<td><button onclick="type_num(6)">6</button></td>
+<td><button onclick="type_num(7)">7</button></td>
+<td><button onclick="type_num(8)">8</button></td>
+<td><button onclick="type_num(9)">9</button></td>
+<td><button onclick="type_num(0)">0</button></td>
+</tr>
+</tbody>
+</table>
+<button onclick="type_num(10)">Clear Box</button><br />
+<button id="quit" onclick="eg($(this).attr('pts'),false)">Quit Game</button>
+</div>
+</div>
+
+<div id="game-over" class="white-bg page">
+<div id="print">
+<h2 id="endTitle">End of Game!</h2>
+<h4 id="endText" style="color: red;"></h4>
+</div>
+<button onclick="pages(1)" class="noprint">Goto Menu</button>
+<h5 class="print">
+Play the game at <u>mqo-game.com</u> free!
+</h5>
+</div>
+<div id="about" class="page white-bg">
+<div id="aboutScreen">
+<div class="about" title="Guide Index" style="display: block;" ignore="true">
+<h3>Guide Index</h3>
+<ul>
+<li>Explore what Math Quiz Online has to offer using this guide that will help you learn to play
+the game!</li>
+<li><a onclick="aP(6)">Need Support?</a></li>
+</ul>
+<br />
+<ul id="index">
+<!-- auto gen index -->
+</ul>
+<br>
+<ul>
+<li style="color: red;">Red links main that you will go off the game itself</li>
+</ul>
+</div>
+
+<div class="about" title="About the Game">
+<h3>About the Game</h3>
+<ul>
+<li>Your game version is <span id="v"></span></li>
+<li><br /></li>
+<li>Look on our <a target="_blank" href="https://facebook.com/mathquizonline">Facebook Page</a>
+for the latest update news</li>
+<li>This game was made by <a target="_blank" href="https://github.com/McJoe21">McJoe21 on
+GitHub</a> and has other projects too!</li>
+<li><br /></li>
+<li>Before playing is recommended that you read the <a onclick="aP(2)">Gameplay</a>
+tutorial first</li>
+<li>Wnt to <a onclick="aP(8)">give feedback</a> about this update?</li>
+</ul>
+</div>
+
+<div class="about" title="Gameplay">
+<h3>Gameplay</h3>
+<ul>
+<li>First enter your name in the box</li>
+<li>Choose the game difficulty and your score target</li>
+<li>Answer the sum get points which shows under question counter</li>
+<li>A wrong answer will lose you a life, you will have 3 lives</li>
+<li>Higher difficulty is more points but harder questions</li>
+<li>When game is over you can see your scores</li>
+<li>You will get bonus points at the end based on your remaining lives</li>
+<li>At night the game background will change to a night sky!</li>
+</ul>
+</div>
+<div class="about" title="Missions/Tasks">
+<h3>Missions/Tasks</h3>
+<ul>
+<li>The has missions as an extra long-term challenge when <a onclick="aP(2)">playing the
+game</a></li>
+<li>The mission task will be shown on the card, telling what you have to complete</li>
+<li>Each task will display what you need and what you have</li>
+<li>Completed tasks will turn green to let you that you have done it</li>
+</ul>
+</div>
+<div class="about" title="Endless Mode">
+<h3>Endless Mode</h3>
+<ul>
+<li>Endless mode is a special challenge that you can unlock by playing the game</li>
+<li>To unlock you most have played 10 games and earn a total of 50 points!</li>
+<li>The mode will keep going until your out of lives</li>
+<li>Enjoy the challenge players!</li>
+</ul>
+</div>
+
+<div class="about" title="Home Menu">
+<h3>Home menu</h3>
+<ul>
+<li>This is where your game will always start and most important features</li>
+<li>The home menu will show your game stats under the name box</li>
+<li>The home menu is where you can choose the settings before you <a
+onclick="aP(1)">start your game</a></li>
+</ul>
+</div>
+<div class="about" title="Need Support?" ignore="true">
+<h3>Need Suport?</h3>
+<ul>
+<li>You can email us on support@mcjoe21.com if you have any questions!</li>
+<li>You can also message us on <a target="_blank"
+href="https://m.me/mathquizonline">Facebook</a> if you need anything!</li>
+</ul>
+</div>
+<div class="about" title="Quiting">
+<h3>Quiting</h3>
+<ul>
+<li>At any time you may quit the game</li>
+<li>Quiting will lose your lives bonus but keep your earned points</li>
+<li>But hoping you don't give up so easy whe you play lol</li>
+</ul>
+</div>
+<div class="about" title="Feedback Hub">
+<h3>Feedback Hub</h3>
+<iframe title="feedback" id="feedback.html" frameborder="0"></iframe>
+</div>
+<div class="about" title="Game Updates!">
+<h3>Game Updates!</h3>
+<ul>
+<li>The game will get a big update every so often that will improve it for the better, Here you
+can read about whats new and upcoming!</li>
+</ul>
+<br>
+<ul>
+<li><a onclick="aP(10)">Latest Updates!</a></li>
+<li><a onclick="aP(11)">Planned Updates!</a></li>
+</ul>
+</div>
+<div class="about" title="Latest Updates!" ignore="true">
+<h3>Latest Updates!</h3>
+<ul>
+<li>Added a new guide book to help new players learn about the game</li>
+<li>Added new <a onclick="aP(3)">Missions</a> to the game</li>
+<li>New night background at night time</li>
+<li>changed the <a onclick="aP(2)">menu</a> to use emoji icons in selection</li>
+<li>Added a new <a onclick="aP(7)">quit</a> button to the game</li>
+<li>New night game background</li>
+</ul>
+</div>
+<div class="about" title="Planned Updates!" ignore="true">
+<h3>Planned Updates!</h3>
+<ul>
+<li>Multiplayer features</li>
+<li>Mission rewards</li>
+</ul>
+</div>
+</div>
+<br>
+<form>
+<button onclick="aP(0);return false;">Guide Home</button>
+<button onclick="pages(1);return false;">Goto Menu</button><br>
+</form>
+</div>
+<!--<script type="text/javascript" src="https://www.usersonline.org/uo-35xaW8z4y5A92y4y-13-1.js"></script>-->
+</center>
+</body>
+
+</html>

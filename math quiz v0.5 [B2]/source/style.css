@@ -1,0 +1,294 @@
+input, select {
+    width: 85%;
+    padding: 2px;
+    font-size: 25px;
+    font-family: 'Ranchers', Sans-Serif, Courier, Lucida, monospace;
+    border-width: 2px;
+    border-color: rgb(97, 93, 93);
+    color: #000;
+    border-style: solid;
+    border-radius: 1px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(66, 66, 66, .75);
+    text-align: center;
+    height: 40px
+}
+
+body {
+    background-color: blue;
+    background-image: url(./images/clouds.png);
+    background-repeat: no-repeat;
+    background-size: 1400px 900px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.page {
+    display: none;
+    margin: auto;
+    width: 80%;
+    max-width: 900px;
+    height: 590px;
+    padding: 10px;
+    font-size: 25px;
+    font-family: Sans-Serif
+}
+
+button {
+    width: 85%;
+    height: 35px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Sans-Serif;
+    background-color: #e67316;
+    border-radius: 6px
+}
+
+button:hover {
+    background-color: orangered;
+    cursor: pointer
+}
+
+td {
+    width: 80px
+}
+
+h4 {
+    color: blue
+}
+
+label, h2, h3 {
+    font-weight: bold;
+    color: red
+}
+
+label {
+    font-size: 25px;
+    max-width: 82%
+}
+
+img {
+    width: 75%;
+    max-width: 650px
+}
+
+a {
+    text-decoration: none;
+    color: blue
+}
+
+a:hover {
+    background-color: grey
+}
+
+a[href] {
+    color: red
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+}
+
+#a {
+    max-width: 500px
+}
+
+#menu form button, #missions button, #about button {
+    max-width: 350px
+}
+
+#menu form label, .header {
+    background-color: white;
+    border-radius: 10px;
+    color: red
+}
+
+#menu form label {
+    font-size: 30px
+}
+
+#game button, #tasks li button {
+    max-width: 500px
+}
+
+#endText {
+    font-size: 24px;
+}
+
+#about {
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 5px
+}
+
+#aboutScreen {
+    height: 450px
+}
+
+#feedback {
+    width: 100%;
+    height: 400px
+}
+
+#logo {
+    margin-bottom: 25px
+}
+
+.task {
+    width: 90%;
+    height: 60px;
+    background-color: blueviolet;
+}
+
+.page, .about {
+    display: none
+}
+
+.about h3 {
+    margin-top: 0
+}
+
+.black-bg {
+    background-color: black
+}
+
+.black-bg a {
+    color: blue
+}
+
+.white-bg {
+    background-color: white
+}
+
+.grey-bg {
+    background-color: #888;
+    color: white;
+    border-radius: 4px
+}
+
+.game {
+    font-size: 60px;
+    font-weight: bold
+}
+
+.small {
+    font-size: 55px
+}
+
+.smaller {
+    font-size: 45px
+}
+
+.print {
+    display: none
+}
+
+.about ul li {
+    font-size: 22px;
+    font-family: 'Ranchers', Sans-Serif, Courier, Lucida, monospace
+}
+
+.spin {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    border: 3px solid rgba(255, 255, 255, .3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.5s ease-in-out infinite;
+    -webkit-animation: spin 0.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.modal * {
+    font-family: Sans-Serif
+}
+
+.modal {
+    z-index: 3;
+    display: none;
+    padding-top: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4)
+}
+
+.modal-content {
+    margin: auto;
+    background-color: #fff;
+    position: relative;
+    padding: 0;
+    outline: 0;
+    width: 500px
+}
+
+.modal-container {
+    padding: 0.01em 16px
+}
+
+.top-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white
+}
+
+@media only screen and (max-width:500px) {
+    #endText {
+        font-size: 22px;
+    }
+    img, .modal-content {
+        width: 90%
+    }
+    input, select {
+        font-size: 20px
+    }
+    #menu form label {
+        font-size: 25px
+    }
+    #game button {
+        width: 85%;
+        max-width: 600px
+    }
+    #a {
+        width: 100%
+    }
+    .game {
+        font-size: 45px;
+        font-weight: bold
+    }
+    .small {
+        font-size: 40px
+    }
+    .smaller {
+        font-size: 30px
+    }
+    .about ul li {
+        font-size: 18px
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mqo-game",
+  "version": "0.5.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mqo-game/math-quiz-game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mqo-game/math-quiz-game/issues"
+  },
+  "homepage": "https://mcjoe21.com/math-quiz"
+}
