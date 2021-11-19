@@ -43,7 +43,7 @@ height="0" width="0" style="visibility:hidden"></iframe></noscript>
 <div id="01" class="modal">
 <div class="modal-content">
 <header class="modal-container black-bg">
-<span onclick="$('#01').hide()" class="top-right" style="font-size:25px">&times;</span>
+<span onclick="$('#01').hide()" class="top-right" style="font-size:50px">&times;</span>
 <h3 style="color: white;" id="modalTitle"></h3>
 </header>
 
@@ -112,7 +112,7 @@ Game not loading? Check you have JavaScript enabled your browser.
 <label style="color: red;" class="tag game question">Question <t id="q"></t>
 </label>
 <br>
-<label id="pts" style="color: red;" class="tag game small"></label><br><br>
+<label id="pts" style="color: red;" class="tag game smaller"></label><br><br>
 <label id="sum" style="color:white;" class="tag game black-bg"></label><br /><br>
 <input id="a" name="a" type="text" disabled>
 <div id="keypad">
@@ -136,7 +136,7 @@ Game not loading? Check you have JavaScript enabled your browser.
 </tbody>
 </table>
 <button onclick="type_num(10)">Clear Box</button><br />
-<button id="quit" onclick="eg(this.pts,false)">Quit Game</button>
+<button id="quit">Quit Game</button>
 </div>
 </div>
 
@@ -152,12 +152,12 @@ Play the game at <u>mqo-game.com</u> free!
 </div>
 <div id="about" class="page white-bg">
 <div id="aboutScreen">
-<div class="about" title="Guide Index" style="display: block;" data-ignore=true>
+<div class="about" title="Guide Index" style="display: block;" ignore>
 <h3>Guide Index</h3>
 <ul>
 <li>Explore what Math Quiz Online has to offer using this guide that will help you learn to play
 the game!</li>
-<li><a onclick="aP(6)">Need Support?</a></li>
+<li><a onclick="ap(6)">Need Support?</a></li>
 </ul>
 <br />
 <ul id="index">
@@ -165,7 +165,7 @@ the game!</li>
 </ul>
 <br>
 <ul>
-<li style="color: red;">Red links main that you will go off the game itself</li>
+<li id="aboutNote">Red links main that you will go off the game itself</li>
 </ul>
 </div>
 
@@ -179,9 +179,9 @@ for the latest update news</li>
 <li>This game was made by <a target="_blank" href="https://github.com/McJoe21">McJoe21 on
 GitHub</a> and has other projects too!</li>
 <li><br /></li>
-<li>Before playing is recommended that you read the <a onclick="aP(2)">Gameplay</a>
+<li>Before playing is recommended that you read the <a onclick="ap(2);">Gameplay</a>
 tutorial first</li>
-<li>Want to <a onclick="aP(8)">give feedback</a> about this update?</li>
+<li>Want to <a onclick="ap(8)">give feedback</a> about this update?</li>
 </ul>
 </div>
 
@@ -202,7 +202,7 @@ tutorial first</li>
 <div class="about" title="Missions/Tasks">
 <h3>Missions/Tasks</h3>
 <ul>
-<li>The has missions as an extra long-term challenge when <a onclick="aP(2)">playing the
+<li>The has missions as an extra long-term challenge when <a onclick="ap(2)">playing the
 game</a></li>
 <li>The mission task will be shown on the card, telling what you have to complete</li>
 <li>Each task will display what you need and what you have</li>
@@ -226,10 +226,10 @@ game</a></li>
 <li>This is where your game will always start and most important features</li>
 <li>The home menu will show your game stats under the name box</li>
 <li>The home menu is where you can choose the settings before you <a
-onclick="aP(1)">start your game</a></li>
+onclick="ap(1)">start your game</a></li>
 </ul>
 </div>
-<div class="about" title="Need Support?" data-ignore="true">
+<div class="about" title="Need Support?" ignore>
 <h3>Need Support?</h3>
 <ul>
 <li>You can email us on support@mcjoe21.com if you have any questions!</li>
@@ -257,23 +257,23 @@ can read about whats new and upcoming!</li>
 </ul>
 <br>
 <ul>
-<li><a onclick="aP(10)">Latest Updates!</a></li>
-<li><a onclick="aP(11)">Planned Updates!</a></li>
+<li><a onclick="ap(10)">Latest Updates!</a></li>
+<li><a onclick="ap(11)">Planned Updates!</a></li>
 </ul>
 </div>
-<div class="about" title="Latest Updates!" data-ignore="true">
+<div class="about" title="Latest Updates!" ignore>
 <h3>Latest Updates!</h3>
 <ul>
 <li>Added a new guide book to help new players learn about the game</li>
 <li>Added new highscore saving</li>
-<li>Addes new <a onclick="aP(3)">Missions</a> to the game</li>
+<li>Addes new <a onclick="ap(3)">Missions</a> to the game</li>
 <li>New night background at night time</li>
-<li>Changed the <a onclick="aP(2)">menu</a> to use emoji icons in selection drop-downs</li>
-<li>Added a new <a onclick="aP(7)">quit</a> button to the game</li>
-</ul>
+<li>Changed the <a onclick="ap(2)">menu</a> to use emoji icons in selection drop-downs</li>
+<li>Added a new <a onclick="ap(7)">quit</a> button to the game</li>
 <li>Now using jQuery!</li>
+</ul>
 </div>
-<div class="about" title="Planned Updates!" data-ignore="true">
+<div class="about" title="Planned Updates!" ignore>
 <h3>Planned Updates!</h3>
 <ul>
 <li>Multiplayer features</li>
@@ -283,7 +283,7 @@ can read about whats new and upcoming!</li>
 </div>
 <br>
 <form>
-<button onclick="aP(0);return false;">Guide Home</button>
+<button onclick="ap(0);return false;">Guide Home</button>
 <button onclick="pages(1);return false;">Goto Menu</button><br>
 </form>
 </div>
