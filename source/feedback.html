@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<body oncontextmenu="return false;">
+    <iframe
+        title="feedback"
+        style="
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        width: 100%;
+        border: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        z-index: 999999;
+        height: 100%;
+        ">
+        Loading Content...</iframe>
+    <script>
+        let url = new URLSearchParams(window.location.search);
+        if (url.get('load') == 1) {
+            document.querySelector('iframe').src = 'https://docs.google.com/forms/d/e/1FAIpQLSciES5MxR2i9X2EzwMcG53H3LhrIkanSV2JczZcTt1wWpwmNQ/viewform?usp=pp_url';
+        } else {
+            document.querySelector('iframe').src = ""
+        }
+    </script>
+</body>
+</html>
