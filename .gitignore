@@ -1,6 +1,7 @@
 *.ps1
 *.zip
 *.inf
+zips/
 .vscode
 filelist.html
 .netlify
