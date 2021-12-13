@@ -5,7 +5,7 @@ $("ver").html(ver);
 $(document).keypress(function(e){
 let _=$("#a"),k=e.key;
 if(_.is(':visible')){
-if(!isNaN(k)&&k!=" "){tn(k)}if(k=="Backspace"){_.val("")}if(k=="Space"){$("#check").click()}return;
+if(!isNaN(k)&&k!=" "){tn(k)}if(k=="Delete"){_.val("")}if(k=="Space"){$("#check").click()}return;
 }});
 });
 //useful global functions
