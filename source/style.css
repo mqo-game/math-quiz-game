@@ -4,6 +4,7 @@
   }
 
  @font-face{font-family:'Montserrat';font-style:normal;font-weight:400;src:local('Montserrat Regular'),local('Montserrat-Regular'),url('fonts/montserrat.woff2') format('woff2'),url('fonts/montserrat.woff')format('woff');}
+@font-face{font-family:'Ranchers';font-style:normal;font-weight:400;src: url(fonts/ranchers.woff2) format('woff2');}
 
 input, select {
 width: 85%;
