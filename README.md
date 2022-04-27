@@ -22,6 +22,7 @@ Play the Game!
     <a href="https://mqo-game.com"><img src="https://img.shields.io/badge/Play%20the%20game-here-orange?style=flat-square" alt="Play full game"></a>
   </p>
 </div>
+
 The Story
 ---------
 
