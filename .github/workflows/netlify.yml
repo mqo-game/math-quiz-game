@@ -1,0 +1,6 @@
+- name: 'Get Netlify URL'
+  uses: voorhoede/get-netlify-url
+  id: get-netlify-url
+
+- name : 'Log retrieved URL'
+  run: 'echo ${{ steps.get-netlify-url.outputs.url }}'
