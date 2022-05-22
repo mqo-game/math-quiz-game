@@ -1,0 +1,36 @@
+name: Feature Request
+description: Want something added or changed? Suggest it here!
+title: '[Feature Request]: Feature title'
+labels:
+  - Suggestion
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description of your feature
+      description: >-
+        A clear and detailed description of what you want added to or changed in
+        the game.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: How would it be added to the game
+      description: If you have a solution in mind, please describe it here.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Describe alternatives you've considered
+      description: Have you considered any alternative solutions or workarounds?
+    validations:
+      required: true
+  - type: input
+    id: demo_link
+    attributes:
+      label: A link to a demo of what you want
+      description: >-
+        If you have created something already, put a link to it for others to
+        see.

@@ -1,0 +1,33 @@
+name: Bug report
+description: Found a bug in the game? Please report it here.
+title: '[Bug]: '
+labels:
+  - Bug
+  - Suggestion
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description of the issue
+      description: A clear and concise description of the problem
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: Provide steps to reproduce the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Exception or Error logs from console
+      description: Provide error logs
+- type: input
+    id: demo_link
+    attributes:
+      label: A link to a demo of the issue
+      description: >-
+        If you have a screenshoot or video, put a link to it for others to
+        see.
