@@ -1,15 +1,15 @@
-name: Bug report
+name: Bug Report
 description: Found a bug in the game? Please report it here.
-title: '[Bug]: '
+title: '[Bug]: Bug title'
 labels:
-  - Bug
   - Suggestion
+  - Bug
 body:
   - type: textarea
     id: description
     attributes:
       label: Description of the issue
-      description: A clear and concise description of the problem
+      description: A clear and detailed description of the problem
     validations:
       required: true
   - type: textarea
@@ -23,11 +23,13 @@ body:
     id: logs
     attributes:
       label: Exception or Error logs from console
-      description: Provide error logs
-- type: input
+      description: Provide error logs from the error when it happened
+  - type: input
     id: demo_link
     attributes:
       label: A link to a demo of the issue
-      description: >-
-        If you have a screenshoot or video, put a link to it for others to
-        see.
+      description: If you have a screenshoot or video, put a link to it for others to see.
+  - type: input
+    id: helping
+    attributes:
+      label: Can you some help with fixing this
