@@ -1,0 +1,9 @@
+Changes in this update!
+-----
+- ♾ Fixed and nerfed Endless mode
+- ❤ Fixed "lives saved" mission
+- ⭐ Fixed task update on claim
+- 👍 Added in-game feedback form
+- 🎉 Added confetti on answer
+- 🎵 Added new sounds to the game!
+- 👀 Worked on the UI

@@ -1,2 +1,10 @@
 [build]
 publish = "source"
+
+[[redirects]]
+from = "/get/*"
+to= "https://feeds.mcjoe21.com/mqo-game/:splat"
+status = 200
+
+[dev]
+port = 2222
