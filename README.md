@@ -15,7 +15,7 @@
   </p>
 </div>
 
-Play the Game!
+### Play the Game!
 --------------
 <div align="center">
   <p>
@@ -23,14 +23,14 @@ Play the Game!
   </p>
 </div>
 
-The Story
+### The Story
 ---------
 
 "Math Quiz Online" is a online math game that was created for schools to help with learning and when the lockdown started it was needed more for home student learning but it was useful when schools went back!
 I originally started the game as a silly little hobby while in school but in the end when it really to go, when the time was I published it to the internet on GitHub and on my website for all to play!
 But the game development has slowed down because of other things but will take in ideas for when I get back to it, but I do have plans for future updates that will improve the game and all feedback is good!
 
-Game Screenshots Gallery
+### Game Screenshots Gallery
 ------------------------
 
 <div align="center">
@@ -67,7 +67,7 @@ Game Screenshots Gallery
   **Guide book for new players to learn about the game**
 </div>
 
-Join the Community
+### Join the Community
 ------------------
 
 - [Facebook Page](https://facebook.com/MathQuizOnline)
