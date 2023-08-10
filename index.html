@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <title>Math Quiz Online - Free to Play</title>
+
+ <link rel="manifest" href="site.webmanifest">
+ <link rel="app-touch-icon" href="/icons/app-touch-icon.png" />
+ <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon" />
+
+ <meta name="keywords" content="education,math,games,online,free,school,math games,quiz, sums,add,takeaway,mixed,times,online games,home,teachers,students, learning">
+ <meta name="description" content="☆ Free to Play Online Math Quiz Game for Home and School Learning ☆ Made before lockdown to help out people ☆ No login required to play! ☆ by mcjoe21.com ☆">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="css/page.css">
+ <link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+</head>
+<body>
+ <script src="./main.js"></script>
+
+ <center>
+  
+  <img src="images/logo.png" alt="logo">
+  <div id="menu" class="page" style="display:block">
+   <form id="name_form">
+    <label for="name">Enter Your Name</label> <br />
+    <input id="name" type="text" autocomplete="name" pattern="[A-Za-z][1-9][]{30}" required>
+   </form>
+   <br />
+   <label id="stats">Loading data...</label>
+   <br /><br />
+   <form>
+    <label for="diff_level">Pick Game Settings</label><br />
+    <select name="" id="diff">
+     <option value="1">Difficulty: Extra-Easy (1-10)</option>
+     <option value="2">Difficulty: Easy (11-20)</option>
+     <option value="3">Difficulty: Normal (21-30)</option>
+     <option value="4">Difficulty: Hard (31-40)</option>
+     <option value="5">Difficulty: Extra-Hard (41-50)</option>
+    </select><br /><br />
+    <select id="target">
+     <option value="any">Target: Endless</option>
+     <option value="20"> Target: 20 Points</option>
+     <option value="40">Target: 40 Points</option>
+     <option value="60">Target: 60 Points</option>
+     <option value="80">Target: 80 Points</option>
+     <option value="100">Target: 100 Points</option>
+    </select>
+   </form>
+   <button onclick="start()">Start Quiz</button>
+
+   <script>
+    document.getElementById('stats').innerHTML = stats.replace("%1", u.plays).replace("%2", u.pts)
+    if (u.name) {
+     document.getElementById("name").value = u.name
+    }
+   </script>
+  </div>
+
+  <div id="game" class="page" style="display:none">
+
+   <form>
+    <h1 style="color: red;"><u>Question <span id="q"></span></u></h1>
+
+    <h1 id="sum" style="color:white;"></h1><br />
+
+    <input id="a" type="number" max="999" pattern="[0-9]{4}" disabled>
+   </form>
+   <button onclick="check()">Check Answer</button>
+   <center>
+    <table align="center">
+     <tbody>
+      <tr>
+       <td><button onclick="type_num(1)">1</button></td>
+       <td><button onclick="type_num(2)">2</button></td>
+       <td><button onclick="type_num(3)">3</button></td>
+       <td><button onclick="type_num(4)">4</button></td>
+       <td><button onclick="type_num(5)">5</button></td>
+      </tr>
+
+      <tr>
+       <td><button onclick="type_num(6)">6</button></td>
+       <td><button onclick="type_num(7)">7</button></td>
+       <td><button onclick="type_num(8)">8</button></td>
+       <td><button onclick="type_num(9)">9</button></td>
+       <td><button onclick="type_num(0)">0</button></td>
+      </tr>
+     </tbody>
+    </table>
+
+    <table>
+     <tbody>
+      <tr>
+       <td><button onclick="type_num(10)">Clear</button>
+       </tr>
+      </tbody>
+     </table>
+    </center>
+   </div>
+
+   <div class="page" id="game-over" style="display:none;background-color:white;">
+    <div id="print">
+     <h2 id="end">End of Game!</h2>
+     <h4 id="text" style="color: red;">Loading text...</h4>
+    </div>
+    <button onclick="pages('menu')" class="noprint">Goto Menu</button>
+    <h5 class="print">
+     Play the game at <u>mqo.mcjoe21.com</u>  free!
+    </h5>
+   </div>
+
+   <div class="page" id="welcome" style="display:none">
+    <h2>Welcome!</h2>
+    <h4>
+     Welcome to my math quiz game,<br />
+     Whenever your playing this at home or school, I'm hoping that you learn something and also having fun while doing it!
+    </h4>
+
+    <h2>How to Play!</h2>
+    <h4>
+     <li>Enter your name in the box</li>
+     <li>Choose game difficulty and target</li>
+     <li>Answer the sum get points</li>
+     <li>Higher difficulty is more points but harder questions</li>
+     <li>When game is over you can see your scores</li>
+    </h4>
+    <button onclick="pages('menu')" id="action">Goto Menu</button>
+   </div>
+
+   <footer id="footer" class="noprint">
+    <center><b><u>
+     <p>
+      Game by <a href="https://github.com/McJoe21" target="_blank">McJoe21</a> • Version 0.4.0
+     </p>
+     • <a href="javascript:openFullscreen();">Go Full Screen</a> • <a href="https://www.facebook.com/Mathquizonline">Facebook</a> • <a href="https://mcJoe21.com/privacy.html">Your Data</a></u></b></center>
+
+    <script type="text/javascript" charset="utf-8">
+     const elem = document
+     function openFullscreen() {
+      if (elem.requestFullscreen) {
+       elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) {
+       /* Safari */
+       elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+       /* IE11 */
+       elem.msRequestFullscreen();
+      }
+     }
+    </script>
+
+    <script>
+     var _uox = _uox || {}; (function() {
+      var s = document.createElement("script");
+      s.src = "https://static.usuarios-online.com/uo2.min.js"; document.getElementsByTagName("head")[0].appendChild(s);
+     })();
+    </script>
+    <a href="https://www.usuarios-online.com/en/" data-id="7d3d7f92b89a5845c4658f0aad590a73" data-type="default" target="_blank" id="uox_link">users online</a>
+   </footer>
+
+  </center>
+ </body>
+</html>
