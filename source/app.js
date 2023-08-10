@@ -1,24 +1,57 @@
-let toCache = ["style.css", "js/jquery.js", "js/script.js", "index.html","feedback.html", "images/clouds.png", "images/night.jpg", "images/logo.png", "icons/32x32.png", "icons/192x192.png", "icons/512x512.png", "icons/favicon.ico", "https://fonts.googleapis.com/css2?family=Ranchers&display=swap"], cacheName = "mqo-game-v0.5.0-b5"; 
-
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(cacheName).then((cache) => {
-      return cache.addAll(toCache);
-    })
-  );
+self.addEventListener('install', function(event) {
+ event.waitUntil(
+  caches.open('mqo-040').then(function(cache) {
+   return cache.addAll(
+    [
+     '/css/print.css',
+     '/css/page.css',
+     '/images/clouds.png',
+     '/images/logo.png',
+     'icons/android-chrome-192x192.png',
+     'icons/android-chrome-512x512.png',
+     'icons/favicon.ico',
+     'icons/favicon-32x32.ico'
+    ]
+   );
+  })
+ );
 });
 
-self.addEventListener('activate', event => {});
+// Initialize deferredPrompt for use later to show browser install prompt.
+let deferredPrompt;
 
-self.addEventListener('fetch', (event) => {
+self.addEventListener('beforeinstallprompt', (e) => {
+ deferredPrompt = e;
+ // Update UI notify the user they can install the PWA
+ showInstallPromotion();
+});
+
+self.addEventListener('activate', (evt) => {})
+
+self.addEventListener('fetch', function(event) {
   event.respondWith(
-    caches.match(event.request).then((resp) => {
-      return resp || fetch(event.request).then((response) => {
-        return caches.open(cacheName).then((cache) => {
-          cache.put(event.request, response.clone());
-          return response;
-        });
-      });
+    caches.match(event.request)
+    .then(function(response) {
+      return response || fetchAndCache(event.request);
     })
   );
 });
+
+function fetchAndCache(url) {
+  return fetch(url)
+  .then(function(response) {
+    // Check if we received a valid response
+    if (!response.ok) {
+      throw Error(response.statusText);
+    }
+    return caches.open('mqo-036')
+    .then(function(cache) {
+      cache.put(url, response.clone());
+      return response;
+    });
+  })  
+  .catch(function(error) {
+    console.log('Request failed:', error);
+    // You could return a custom offline 404 page here
+  });
+}
