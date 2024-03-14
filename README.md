@@ -1,7 +1,7 @@
 ## Math Quiz Online - Free Math Quiz Game
 <div align="center">
 
-  <img alt="math quiz online logo" title="math quiz online logo" src="https://mcjoe21.com/math-quiz/images/mqo-game-logo-long.png">
+  <img alt="math quiz online logo" title="math quiz online logo" src="https://static.mcjoe21.com/img/1/banner.png">
 
   <p>
     <a href="https://github.com/mqo-game/math-quiz-game/issues"><img src="https://img.shields.io/github/issues/mqo-game/math-quiz-game?style=flat-square&logo=github" alt="GitHub issues"></a>
