@@ -7,7 +7,6 @@
     <a href="https://github.com/mqo-game/math-quiz-game/issues"><img src="https://img.shields.io/github/issues/mqo-game/math-quiz-game?style=flat-square&logo=github" alt="GitHub issues"></a>
     <a href="https://github.com/mqo-game/math-quiz-game/forks"><img src="https://img.shields.io/github/forks/mqo-game/math-quiz-game?style=flat-square&logo=github" alt="GitHub forks"></a>
     <a href="https://github.com/mqo-game/math-quiz-game/stargazers"><img src="https://img.shields.io/github/stars/mqo-game/math-quiz-game?style=flat-square&logo=github" alt="GitHub stars"></a>
-    <a href="https://api.mcjoe21.com/packages/get?id=mqo-game"><img src="https://img.shields.io/badge/API%20Request-JSON-lighthgrey?style=flat-square" alt="API Request JSON Badge "></a>
   </p>
 
   <p>
