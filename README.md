@@ -1,7 +1,7 @@
 ## Math Quiz Online       
 
 <div align="center">
-<img alt="math quiz online logo" src=https://mcjoe21.com/math-quiz/images/mqo-game-logo-long.png>
+<img alt="math quiz online logo" src="https://static.mcjoe21.com/img/1/banner.png">
 </div>
 
 - Find me on [Facebook](https://facebook.com/mathquizonline)
