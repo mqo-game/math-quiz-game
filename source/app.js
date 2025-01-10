@@ -44,7 +44,7 @@ function fetchAndCache(url) {
     if (!response.ok) {
       throw Error(response.statusText);
     }
-    return caches.open('mqo-036')
+    return caches.open('mqo-036-1')
     .then(function(cache) {
       cache.put(url, response.clone());
       return response;
